@@ -461,7 +461,7 @@ dBtn.addEventListener('click', function(e){
   const phone = document.getElementById('d-phone').value.trim();
   const members = document.getElementById('d-members').value || 'Not specified';
 
-  const waNumber = 'WHATSAPP_NUMBER_PLACEHOLDER';
+  const waNumber = '917737077479';
   const msg = `Gym OS — Demo Request%0A%0A*Name:* ${name}%0A*Gym:* ${gym}%0A*City:* ${city}%0A*Phone:* ${phone}%0A*Members:* ${members}%0A%0AI would like to book a personalized demo of Gym OS.`;
   const waUrl = `https://wa.me/${waNumber}?text=${msg}`;
   window.location.href = waUrl;
