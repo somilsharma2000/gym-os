@@ -3,49 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gym OS — Complete Gym Management System for Indian Gyms</title>
-<meta name="description" content="Gym OS is a premium gym management platform with QR check-in, WhatsApp automation, lead CRM, member management, AI insights, and a auto-synced website — all in one dashboard.">
+<title>Gym OS — by Beyond Pixels | Complete Gym Management System</title>
+<meta name="description" content="Gym OS by Beyond Pixels — a complete gym management platform with QR check-in, WhatsApp automation, lead CRM, member management, AI insights, and a auto-synced website.">
+<link rel="icon" href="logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#0ea5e9;--dark:#0f172a;--slate:#1e293b;--gray:#64748b;--light:#f1f5f9;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--white:#fff}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;overflow-x:hidden}
-a{color:var(--primary);text-decoration:none}
+:root{--blue:#1E4FD8;--navy:#0B1B3F;--slate:#1e293b;--gray:#64748b;--light:#f1f5f9;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--white:#fff}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:var(--white);color:var(--navy);line-height:1.6;overflow-x:hidden}
+a{color:var(--blue);text-decoration:none}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
+img.logo-img{width:32px;height:32px;border-radius:50%;object-fit:cover}
 
 /* NAV */
-nav{position:fixed;top:0;width:100%;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);z-index:100;padding:16px 0;transition:.3s}
+nav{position:fixed;top:0;width:100%;background:rgba(11,27,63,.96);backdrop-filter:blur(10px);z-index:100;padding:14px 0;transition:.3s}
 nav .container{display:flex;justify-content:space-between;align-items:center}
-nav .logo{font-size:1.4rem;font-weight:800;color:var(--white);display:flex;align-items:center;gap:8px}
-nav .logo span{color:var(--primary)}
-nav ul{display:flex;gap:30px;list-style:none}
-nav ul a{color:var(--light);font-size:.95rem;transition:.2s}
-nav ul a:hover{color:var(--primary)}
-nav .cta{background:var(--primary);color:var(--white)!important;padding:10px 24px;border-radius:8px;font-weight:600}
+nav .brand{display:flex;align-items:center;gap:10px}
+nav .brand .bp{display:flex;align-items:center;gap:6px;font-size:1.1rem;font-weight:800;color:var(--white)}
+nav .brand .sep{color:#475569;font-size:1.2rem}
+nav .brand .product{font-size:1.1rem;font-weight:700;color:#93c5fd}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{color:#cbd5e1;font-size:.92rem;transition:.2s}
+nav ul a:hover{color:#fff}
+nav .cta{background:var(--blue);color:var(--white)!important;padding:9px 20px;border-radius:8px;font-weight:600;font-size:.9rem}
 @media(max-width:768px){nav ul{display:none}}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0ea5e9 150%);padding:120px 0 80px;color:var(--white);text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.05"/></svg>');opacity:.3}
-.hero h1{font-size:3.2rem;font-weight:800;margin-bottom:20px;line-height:1.2}
-.hero h1 span{background:linear-gradient(to right,#0ea5e9,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:1.2rem;color:var(--light);max-width:600px;margin:0 auto 30px;opacity:.9}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#132a5e 50%,var(--blue) 150%);padding:130px 0 90px;color:var(--white);text-align:center;position:relative}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.82rem;margin-bottom:24px;color:#e2e8f0}
+.hero .pill .dot{width:7px;height:7px;background:var(--green);border-radius:50%}
+.hero h1{font-size:3rem;font-weight:800;margin-bottom:20px;line-height:1.15}
+.hero h1 span{background:linear-gradient(to right,#60a5fa,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.15rem;color:#cbd5e1;max-width:640px;margin:0 auto 34px}
 .hero .cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.hero .btn{padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;transition:.2s;border:none;cursor:pointer}
-.hero .btn-primary{background:var(--primary);color:var(--white)}
-.hero .btn-primary:hover{background:#0284c7;transform:translateY(-2px)}
-.hero .btn-outline{background:transparent;color:var(--white);border:2px solid var(--light)}
-.hero .btn-outline:hover{background:var(--white);color:var(--dark)}
+.hero .btn{padding:14px 30px;border-radius:10px;font-weight:600;font-size:1rem;transition:.2s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.hero .btn-primary{background:var(--white);color:var(--navy)}
+.hero .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.hero .btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.4)}
+.hero .btn-outline:hover{background:rgba(255,255,255,.1)}
 .hero .stats{display:flex;gap:40px;justify-content:center;margin-top:50px;flex-wrap:wrap}
 .hero .stat{text-align:center}
-.hero .stat .num{font-size:2rem;font-weight:800;color:var(--primary)}
-.hero .stat .label{font-size:.85rem;color:var(--light);opacity:.7}
+.hero .stat .num{font-size:2rem;font-weight:800;color:#60a5fa}
+.hero .stat .label{font-size:.85rem;color:#cbd5e1;opacity:.7}
 
 /* SECTION */
-section{padding:80px 0}
-.section-title{text-align:center;margin-bottom:50px}
-.section-title h2{font-size:2.2rem;font-weight:800;margin-bottom:10px}
-.section-title p{color:var(--gray);font-size:1.1rem}
-.section-title h2 span{color:var(--primary)}
+section{padding:78px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title .tag{color:var(--blue);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;display:block}
+.section-title h2{font-size:2.1rem;font-weight:800;margin-bottom:10px}
+.section-title p{color:var(--gray);font-size:1.05rem;max-width:600px;margin:0 auto}
+.section-title h2 span{color:var(--blue)}
 
 /* FEATURES */
 .features{background:var(--light)}
@@ -59,54 +65,60 @@ section{padding:80px 0}
 /* PRICING */
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto}
 .pricing-card{background:var(--white);border-radius:16px;padding:32px;text-align:center;border:2px solid #e2e8f0;position:relative;transition:.2s}
-.pricing-card:hover{border-color:var(--primary);transform:translateY(-4px)}
-.pricing-card.popular{border-color:var(--primary);box-shadow:0 10px 30px rgba(14,165,233,.15)}
-.pricing-card.popular .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--white);padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600}
+.pricing-card:hover{border-color:var(--blue);transform:translateY(-4px)}
+.pricing-card.popular{border-color:var(--blue);box-shadow:0 10px 30px rgba(30,79,216,.15)}
+.pricing-card.popular .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--white);padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600}
 .pricing-card h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}
 .pricing-card .target{color:var(--gray);font-size:.85rem;margin-bottom:16px}
-.pricing-card .price{font-size:2.5rem;font-weight:800;color:var(--dark)}
+.pricing-card .price{font-size:2.5rem;font-weight:800;color:var(--navy)}
 .pricing-card .price span{font-size:1rem;color:var(--gray);font-weight:400}
-.pricing-card .monthly{color:var(--primary);font-weight:600;margin:8px 0 20px}
+.pricing-card .monthly{color:var(--blue);font-weight:600;margin:8px 0 20px}
 .pricing-card ul{text-align:left;list-style:none;margin-bottom:24px}
 .pricing-card ul li{padding:6px 0;color:var(--slate);font-size:.9rem;display:flex;align-items:center;gap:8px}
 .pricing-card ul li::before{content:'✓';color:var(--green);font-weight:700}
 .pricing-card .btn{display:block;width:100%;padding:12px;border-radius:8px;font-weight:600;border:none;cursor:pointer;transition:.2s}
-.pricing-card .btn{background:var(--light);color:var(--dark)}
-.pricing-card.popular .btn{background:var(--primary);color:var(--white)}
+.pricing-card .btn{background:var(--light);color:var(--navy)}
+.pricing-card.popular .btn{background:var(--blue);color:var(--white)}
 .pricing-card .btn:hover{opacity:.9}
 
 /* COMPARISON */
-.comparison{background:var(--dark);color:var(--white)}
+.comparison{background:var(--navy);color:var(--white)}
 .comparison table{width:100%;border-collapse:collapse;max-width:800px;margin:0 auto}
 .comparison th,.comparison td{padding:16px;text-align:left;border-bottom:1px solid var(--slate)}
-.comparison th{color:var(--primary);font-weight:700}
+.comparison th{color:#60a5fa;font-weight:700}
 .comparison td:first-child{font-weight:600}
 .comparison .gymos{color:var(--green);font-weight:700}
 
 /* PROCESS */
 .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:0 auto}
 .step{background:var(--white);border-radius:12px;padding:24px;text-align:center;border:1px solid #e2e8f0}
-.step .num{width:40px;height:40px;background:var(--primary);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px}
+.step .num{width:40px;height:40px;background:var(--blue);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px}
 .step h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
 .step p{color:var(--gray);font-size:.9rem}
 
 /* CTA */
-.cta-section{background:linear-gradient(135deg,var(--primary),#0284c7);color:var(--white);text-align:center;padding:80px 0}
+.cta-section{background:linear-gradient(135deg,var(--blue),#132a5e);color:var(--white);text-align:center;padding:80px 0}
 .cta-section h2{font-size:2.2rem;font-weight:800;margin-bottom:16px}
 .cta-section p{font-size:1.1rem;opacity:.9;margin-bottom:30px}
-.cta-section .btn{background:var(--white);color:var(--primary);padding:14px 40px;border-radius:10px;font-weight:700;font-size:1.1rem;border:none;cursor:pointer;transition:.2s}
+.cta-section .btn{background:var(--white);color:var(--blue);padding:14px 40px;border-radius:10px;font-weight:700;font-size:1.1rem;border:none;cursor:pointer;transition:.2s}
 .cta-section .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 
-/* FOOTER */
-footer{background:var(--dark);color:var(--light);padding:40px 0;text-align:center}
-footer .container{display:flex;flex-direction:column;align-items:center;gap:12px}
-footer .logo{font-size:1.2rem;font-weight:800;color:var(--white)}
-footer .logo span{color:var(--primary)}
-footer p{font-size:.85rem;opacity:.6}
-footer .links{display:flex;gap:20px;list-style:none}
-footer .links a{color:var(--light);font-size:.85rem}
+/* POWERED BY */
+.powered-by{text-align:center;padding:40px 0;background:var(--light)}
+.powered-by p{color:var(--gray);font-size:.9rem;margin-bottom:12px}
+.powered-by a{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--navy);font-size:1.1rem}
+.powered-by a span{color:var(--blue)}
 
-/* ANIMATION */
+/* FOOTER */
+footer{background:var(--navy);color:#cbd5e1;padding:44px 0 24px}
+footer .container{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+footer .brand{display:flex;align-items:center;gap:10px;font-size:1.15rem;font-weight:800;color:var(--white)}
+footer .brand span{color:#60a5fa}
+footer p{font-size:.85rem;opacity:.7}
+footer .links{display:flex;gap:22px;list-style:none;flex-wrap:wrap;justify-content:center}
+footer .links a{color:#cbd5e1;font-size:.85rem}
+footer .links a:hover{color:#fff}
+
 .fade-in{opacity:0;transform:translateY(20px);transition:.6s}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
@@ -116,25 +128,32 @@ footer .links a{color:var(--light);font-size:.85rem}
 <!-- NAV -->
 <nav>
 <div class="container">
-<div class="logo">🏋️ Gym<span>OS</span></div>
+<div class="brand">
+<img src="logo.png" class="logo-img" alt="Beyond Pixels logo">
+<span class="bp">Beyond Pixels</span>
+<span class="sep">|</span>
+<span class="product">Gym OS</span>
+</div>
 <ul>
+<li><a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank">← Beyond Pixels</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#comparison">Why Us</a></li>
 <li><a href="#process">How It Works</a></li>
 </ul>
-<a href="#pricing" class="cta">Get Started</a>
+<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="cta">Book a Demo →</a>
 </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
 <div class="container">
+<div class="pill"><span class="dot"></span> A Beyond Pixels product — live in real gyms</div>
 <h1>Turn Your Gym's Register Book Into An <span>Automated System</span></h1>
 <p>Gym OS is the complete gym management platform built for Indian gyms — QR check-in, WhatsApp automation, lead CRM, payments, classes, and a premium website. All from one dashboard on your phone.</p>
 <div class="cta-group">
 <a href="#pricing" class="btn btn-primary">View Pricing →</a>
-<a href="#features" class="btn btn-outline">See All Features</a>
+<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn btn-outline">Book a Demo</a>
 </div>
 <div class="stats">
 <div class="stat"><div class="num">300+</div><div class="label">Features</div></div>
@@ -149,6 +168,7 @@ footer .links a{color:var(--light);font-size:.85rem}
 <section class="features" id="features">
 <div class="container">
 <div class="section-title">
+<span class="tag">Features</span>
 <h2>Everything Your Gym Needs — <span>In One System</span></h2>
 <p>Replace your register, billing software, Instagram agency, and CRM with one dashboard</p>
 </div>
@@ -173,6 +193,7 @@ footer .links a{color:var(--light);font-size:.85rem}
 <section id="pricing">
 <div class="container">
 <div class="section-title">
+<span class="tag">Pricing</span>
 <h2>Simple <span>Pricing</span></h2>
 <p>One fixed monthly price. Setup based on gym size. No hidden charges.</p>
 </div>
@@ -192,7 +213,7 @@ footer .links a{color:var(--light);font-size:.85rem}
 <li>Email support (48hr)</li>
 <li>1 staff login</li>
 </ul>
-<a href="#" class="btn">Choose Standard</a>
+<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
 </div>
 <div class="pricing-card popular">
 <div class="badge">MOST POPULAR</div>
@@ -211,7 +232,7 @@ footer .links a{color:var(--light);font-size:.85rem}
 <li>Priority support (24hr)</li>
 <li>3 staff logins</li>
 </ul>
-<a href="#" class="btn">Choose Complete</a>
+<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
 </div>
 <div class="pricing-card">
 <h3>Premium</h3>
@@ -229,7 +250,7 @@ footer .links a{color:var(--light);font-size:.85rem}
 <li>5 staff logins</li>
 <li>Quarterly review call</li>
 </ul>
-<a href="#" class="btn">Choose Premium</a>
+<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
 </div>
 </div>
 </div>
@@ -239,7 +260,8 @@ footer .links a{color:var(--light);font-size:.85rem}
 <section class="comparison" id="comparison">
 <div class="container">
 <div class="section-title">
-<h2 style="color:#fff">Why Gyms Choose <span style="color:#0ea5e9">Gym OS</span></h2>
+<span class="tag" style="color:#60a5fa">Why Us</span>
+<h2 style="color:#fff">Why Gyms Choose <span style="color:#60a5fa">Gym OS</span></h2>
 <p style="color:#94a3b8">Stop paying for 5 different tools that don't sync</p>
 </div>
 <table>
@@ -260,6 +282,7 @@ footer .links a{color:var(--light);font-size:.85rem}
 <section id="process">
 <div class="container">
 <div class="section-title">
+<span class="tag">How It Works</span>
 <h2>How It <span>Works</span></h2>
 <p>From "I'm interested" to fully running in 3 days</p>
 </div>
@@ -277,30 +300,38 @@ footer .links a{color:var(--light);font-size:.85rem}
 <div class="container">
 <h2>You're Losing ₹25,000/Month Right Now</h2>
 <p>Expired members still attending. Renewals nobody reminded. Leads you forgot to follow up. Gym OS stops it all for ₹5,000/month.</p>
-<a href="#pricing" class="btn">Start Today →</a>
+<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo →</a>
 </div>
 </section>
+
+<!-- POWERED BY -->
+<div class="powered-by">
+<div class="container">
+<p>This is a product of</p>
+<a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank"><img src="logo.png" class="logo-img" alt="Beyond Pixels logo"> Beyond <span>Pixels</span></a>
+</div>
+</div>
 
 <!-- FOOTER -->
 <footer>
 <div class="container">
-<div class="logo">🏋️ Gym<span>OS</span></div>
+<div class="brand"><img src="logo.png" class="logo-img" alt="Beyond Pixels logo"> Beyond <span>Pixels</span> | Gym OS</div>
 <p>The complete gym management system built for Indian gyms.</p>
 <ul class="links">
-<li><a href="https://github.com/somilsharma2000/gym-os">GitHub</a></li>
+<li><a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank">Beyond Pixels</a></li>
+<li><a href="https://beyondhub-bqxcyobv.manus.space" target="_blank">Beyond Reach — Partner Portal</a></li>
+<li><a href="https://github.com/somilsharma2000/gym-os" target="_blank">GitHub</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
 </ul>
-<p>© 2026 Gym OS. Built by Somil Sharma.</p>
+<p>© 2026 Beyond Pixels. All systems live and running.</p>
 </div>
 </footer>
 
 <script>
-// Scroll animation
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.feature-card,.pricing-card,.step').forEach(el=>{el.classList.add('fade-in');observer.observe(el)});
-// Nav scroll
-window.addEventListener('scroll',()=>{if(window.scrollY>50){document.querySelector('nav').style.padding='10px 0'}else{document.querySelector('nav').style.padding='16px 0'}});
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.padding=window.scrollY>50?'8px 0':'14px 0'});
 </script>
 </body>
 </html>
