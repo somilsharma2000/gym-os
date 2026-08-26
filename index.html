@@ -8,47 +8,46 @@
 <link rel="icon" href="logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#1E4FD8;--navy:#0B1B3F;--slate:#1e293b;--gray:#64748b;--light:#f1f5f9;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--white:#fff}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:var(--white);color:var(--navy);line-height:1.6;overflow-x:hidden}
+:root{--blue:#1E4FD8;--navy:#0B1B3F;--slate:#1e293b;--gray:#64748b;--light:#f1f5f9;--green:#22c55e;--white:#fff;--border:#e2e8f0}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--white);color:var(--navy);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:var(--blue);text-decoration:none}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 img.logo-img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+.svg-icon{width:24px;height:24px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
 
 /* NAV */
 nav{position:fixed;top:0;width:100%;background:rgba(11,27,63,.96);backdrop-filter:blur(10px);z-index:100;padding:14px 0;transition:.3s}
 nav .container{display:flex;justify-content:space-between;align-items:center}
 nav .brand{display:flex;align-items:center;gap:10px}
-nav .brand .bp{display:flex;align-items:center;gap:6px;font-size:1.1rem;font-weight:800;color:var(--white)}
+nav .brand .bp{font-size:1.1rem;font-weight:800;color:var(--white)}
 nav .brand .sep{color:#475569;font-size:1.2rem}
 nav .brand .product{font-size:1.1rem;font-weight:700;color:#93c5fd}
-nav ul{display:flex;gap:28px;list-style:none}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
 nav ul a{color:#cbd5e1;font-size:.92rem;transition:.2s}
 nav ul a:hover{color:#fff}
-nav .cta{background:var(--blue);color:var(--white)!important;padding:9px 20px;border-radius:8px;font-weight:600;font-size:.9rem}
-@media(max-width:768px){nav ul{display:none}}
+nav .nav-cta{background:var(--blue);color:var(--white)!important;padding:9px 20px;border-radius:8px;font-weight:600;font-size:.9rem;transition:.2s}
+nav .nav-cta:hover{background:#3b6ae8}
+@media(max-width:768px){nav ul li:not(:last-child):not(:nth-last-child(1)){display:none}}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,var(--navy) 0%,#132a5e 50%,var(--blue) 150%);padding:130px 0 90px;color:var(--white);text-align:center;position:relative}
-.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.82rem;margin-bottom:24px;color:#e2e8f0}
-.hero .pill .dot{width:7px;height:7px;background:var(--green);border-radius:50%}
-.hero h1{font-size:3rem;font-weight:800;margin-bottom:20px;line-height:1.15}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#132a5e 50%,var(--blue) 150%);padding:140px 0 100px;color:var(--white);text-align:center}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:6px 16px;border-radius:20px;font-size:.82rem;margin-bottom:24px;color:#e2e8f0}
+.hero .pill .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:3rem;font-weight:800;margin-bottom:20px;line-height:1.15;max-width:800px;margin-left:auto;margin-right:auto}
 .hero h1 span{background:linear-gradient(to right,#60a5fa,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero p{font-size:1.15rem;color:#cbd5e1;max-width:640px;margin:0 auto 34px}
 .hero .cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.hero .btn{padding:14px 30px;border-radius:10px;font-weight:600;font-size:1rem;transition:.2s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.hero .btn{padding:14px 30px;border-radius:10px;font-weight:600;font-size:1rem;transition:.2s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
 .hero .btn-primary{background:var(--white);color:var(--navy)}
 .hero .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
 .hero .btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.4)}
 .hero .btn-outline:hover{background:rgba(255,255,255,.1)}
-.hero .stats{display:flex;gap:40px;justify-content:center;margin-top:50px;flex-wrap:wrap}
-.hero .stat{text-align:center}
-.hero .stat .num{font-size:2rem;font-weight:800;color:#60a5fa}
-.hero .stat .label{font-size:.85rem;color:#cbd5e1;opacity:.7}
 
 /* SECTION */
-section{padding:78px 0}
-.section-title{text-align:center;margin-bottom:48px}
-.section-title .tag{color:var(--blue);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;display:block}
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title .tag{color:var(--blue);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:block}
 .section-title h2{font-size:2.1rem;font-weight:800;margin-bottom:10px}
 .section-title p{color:var(--gray);font-size:1.05rem;max-width:600px;margin:0 auto}
 .section-title h2 span{color:var(--blue)}
@@ -56,27 +55,27 @@ section{padding:78px 0}
 /* FEATURES */
 .features{background:var(--light)}
 .feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.feature-card{background:var(--white);border-radius:12px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s;border:1px solid #e2e8f0}
+.feature-card{background:var(--white);border-radius:12px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s;border:1px solid var(--border)}
 .feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
-.feature-card .icon{font-size:2rem;margin-bottom:12px}
-.feature-card h3{font-size:1.15rem;font-weight:700;margin-bottom:8px}
+.feature-card .icon-wrap{width:44px;height:44px;background:var(--light);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--blue)}
+.feature-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
 .feature-card p{color:var(--gray);font-size:.9rem}
 
 /* PRICING */
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto}
-.pricing-card{background:var(--white);border-radius:16px;padding:32px;text-align:center;border:2px solid #e2e8f0;position:relative;transition:.2s}
+.pricing-card{background:var(--white);border-radius:16px;padding:32px;text-align:center;border:2px solid var(--border);position:relative;transition:.2s}
 .pricing-card:hover{border-color:var(--blue);transform:translateY(-4px)}
 .pricing-card.popular{border-color:var(--blue);box-shadow:0 10px 30px rgba(30,79,216,.15)}
-.pricing-card.popular .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--white);padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600}
+.pricing-card.popular .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--white);padding:4px 16px;border-radius:20px;font-size:.78rem;font-weight:600}
 .pricing-card h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}
 .pricing-card .target{color:var(--gray);font-size:.85rem;margin-bottom:16px}
 .pricing-card .price{font-size:2.5rem;font-weight:800;color:var(--navy)}
 .pricing-card .price span{font-size:1rem;color:var(--gray);font-weight:400}
 .pricing-card .monthly{color:var(--blue);font-weight:600;margin:8px 0 20px}
 .pricing-card ul{text-align:left;list-style:none;margin-bottom:24px}
-.pricing-card ul li{padding:6px 0;color:var(--slate);font-size:.9rem;display:flex;align-items:center;gap:8px}
-.pricing-card ul li::before{content:'✓';color:var(--green);font-weight:700}
-.pricing-card .btn{display:block;width:100%;padding:12px;border-radius:8px;font-weight:600;border:none;cursor:pointer;transition:.2s}
+.pricing-card ul li{padding:6px 0;color:var(--slate);font-size:.88rem;display:flex;align-items:center;gap:8px}
+.pricing-card ul li svg{width:16px;height:16px;color:var(--green);flex-shrink:0}
+.pricing-card .btn{display:block;width:100%;padding:12px;border-radius:8px;font-weight:600;border:none;cursor:pointer;transition:.2s;text-align:center;text-decoration:none}
 .pricing-card .btn{background:var(--light);color:var(--navy)}
 .pricing-card.popular .btn{background:var(--blue);color:var(--white)}
 .pricing-card .btn:hover{opacity:.9}
@@ -91,16 +90,16 @@ section{padding:78px 0}
 
 /* PROCESS */
 .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:0 auto}
-.step{background:var(--white);border-radius:12px;padding:24px;text-align:center;border:1px solid #e2e8f0}
+.step{background:var(--white);border-radius:12px;padding:24px;text-align:center;border:1px solid var(--border)}
 .step .num{width:40px;height:40px;background:var(--blue);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px}
-.step h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
-.step p{color:var(--gray);font-size:.9rem}
+.step h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.step p{color:var(--gray);font-size:.88rem}
 
 /* CTA */
 .cta-section{background:linear-gradient(135deg,var(--blue),#132a5e);color:var(--white);text-align:center;padding:80px 0}
 .cta-section h2{font-size:2.2rem;font-weight:800;margin-bottom:16px}
 .cta-section p{font-size:1.1rem;opacity:.9;margin-bottom:30px}
-.cta-section .btn{background:var(--white);color:var(--blue);padding:14px 40px;border-radius:10px;font-weight:700;font-size:1.1rem;border:none;cursor:pointer;transition:.2s}
+.cta-section .btn{background:var(--white);color:var(--blue);padding:14px 40px;border-radius:10px;font-weight:700;font-size:1.1rem;border:none;cursor:pointer;transition:.2s;text-decoration:none;display:inline-block}
 .cta-section .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 
 /* POWERED BY */
@@ -116,7 +115,7 @@ footer .brand{display:flex;align-items:center;gap:10px;font-size:1.15rem;font-we
 footer .brand span{color:#60a5fa}
 footer p{font-size:.85rem;opacity:.7}
 footer .links{display:flex;gap:22px;list-style:none;flex-wrap:wrap;justify-content:center}
-footer .links a{color:#cbd5e1;font-size:.85rem}
+footer .links a{color:#cbd5e1;font-size:.85rem;transition:.2s}
 footer .links a:hover{color:#fff}
 
 .fade-in{opacity:0;transform:translateY(20px);transition:.6s}
@@ -129,19 +128,19 @@ footer .links a:hover{color:#fff}
 <nav>
 <div class="container">
 <div class="brand">
-<img src="logo.png" class="logo-img" alt="Beyond Pixels logo">
+<img src="logo.png" class="logo-img" alt="Beyond Pixels">
 <span class="bp">Beyond Pixels</span>
 <span class="sep">|</span>
 <span class="product">Gym OS</span>
 </div>
 <ul>
-<li><a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank">← Beyond Pixels</a></li>
+<li><a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank">Beyond Pixels</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#comparison">Why Us</a></li>
 <li><a href="#process">How It Works</a></li>
 </ul>
-<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="cta">Book a Demo →</a>
+<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="nav-cta">Book a Demo</a>
 </div>
 </nav>
 
@@ -150,16 +149,10 @@ footer .links a:hover{color:#fff}
 <div class="container">
 <div class="pill"><span class="dot"></span> A Beyond Pixels product — live in real gyms</div>
 <h1>Turn Your Gym's Register Book Into An <span>Automated System</span></h1>
-<p>Gym OS is the complete gym management platform built for Indian gyms — QR check-in, WhatsApp automation, lead CRM, payments, classes, and a premium website. All from one dashboard on your phone.</p>
+<p>Gym OS is a complete gym management platform — QR check-in, WhatsApp automation, lead CRM, payments, classes, and a premium website. All from one dashboard on your phone.</p>
 <div class="cta-group">
-<a href="#pricing" class="btn btn-primary">View Pricing →</a>
+<a href="#pricing" class="btn btn-primary">View Pricing</a>
 <a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn btn-outline">Book a Demo</a>
-</div>
-<div class="stats">
-<div class="stat"><div class="num">300+</div><div class="label">Features</div></div>
-<div class="stat"><div class="num">18</div><div class="label">WhatsApp Automations</div></div>
-<div class="stat"><div class="num">13</div><div class="label">Lead Sources</div></div>
-<div class="stat"><div class="num">₹5K/mo</div><div class="label">Fixed Price</div></div>
 </div>
 </div>
 </div>
@@ -170,21 +163,70 @@ footer .links a:hover{color:#fff}
 <div class="section-title">
 <span class="tag">Features</span>
 <h2>Everything Your Gym Needs — <span>In One System</span></h2>
-<p>Replace your register, billing software, Instagram agency, and CRM with one dashboard</p>
+<p>Replace your register, billing software, social media agency, and CRM with one dashboard</p>
 </div>
 <div class="feature-grid">
-<div class="feature-card"><div class="icon">📊</div><h3>Owner Dashboard</h3><p>One screen shows everything — who's in the gym, today's revenue, new leads, expiring members, and what to do today. Works on any phone.</p></div>
-<div class="feature-card"><div class="icon">🌐</div><h3>Premium Website</h3><p>9+ pages, auto-synced with Gym OS. Change a price → website updates in 5 min. SEO-optimized, captures leads directly into your CRM.</p></div>
-<div class="feature-card"><div class="icon">📱</div><h3>QR Check-In</h3><p>Members scan QR → check-in in 2 seconds. Rotating QR (can't be screenshot). Works offline. Blocks expired members automatically.</p></div>
-<div class="feature-card"><div class="icon">💬</div><h3>WhatsApp Automation</h3><p>18 automated triggers: renewal reminders, birthday wishes, payment receipts, absent alerts. Max 1/day per member. No spam.</p></div>
-<div class="feature-card"><div class="icon">🎯</div><h3>Lead CRM</h3><p>All leads from Instagram, Google, website, WhatsApp, walk-ins — in one inbox. AI scores each lead hot/warm/cold. Never lose a lead.</p></div>
-<div class="feature-card"><div class="icon">💰</div><h3>Payment Tracking</h3><p>You control all money — cash, UPI, card. System just tracks. Auto-sends WhatsApp receipts. Revenue dashboard. Zero liability.</p></div>
-<div class="feature-card"><div class="icon">🏋️</div><h3>Class Scheduling</h3><p>Recurring classes, online booking, waitlist with auto-notify, live capacity tracking. Cancellation auto-notifies enrolled members.</p></div>
-<div class="feature-card"><div class="icon">👨‍🏫</div><h3>Trainer Management</h3><p>Trainer profiles, member assignment, schedules, commission tracking, payroll calculation. Trainer login with limited access.</p></div>
-<div class="feature-card"><div class="icon">🤖</div><h3>AI Intelligence</h3><p>Churn prediction: "Rahul hasn't come in 12 days — at risk." Revenue forecast. "What Should I Do Today" — 3 priority actions every morning.</p></div>
-<div class="feature-card"><div class="icon">🔥</div><h3>Loyalty & Gamification</h3><p>Points per check-in, streak tracking, challenges ("20 days in 30 = 1 month free"), achievement badges. Keeps members coming back.</p></div>
-<div class="feature-card"><div class="icon">📈</div><h3>Reports & Analytics</h3><p>Revenue, member growth, attendance trends, churn rate, lead conversion funnel, trainer performance. Export to PDF/Excel.</p></div>
-<div class="feature-card"><div class="icon">🇮🇳</div><h3>Built for India</h3><p>Works offline. Works on ₹6,000 phones. Hindi + English. Festival-based offers. Low data usage. No payment gateway needed.</p></div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+<h3>Owner Dashboard</h3><p>One screen shows everything — who is in the gym, today's revenue, new leads, expiring members, and what to do today. Works on any phone.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+<h3>Premium Website</h3><p>9+ pages, auto-synced with Gym OS. Change a price and the website updates in 5 minutes. SEO-optimized, captures leads directly into your CRM.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M14 3h7v7M3 14l7 7"/></svg></div>
+<h3>QR Check-In</h3><p>Members scan QR and check in in 2 seconds. Rotating QR prevents screenshots. Works offline. Blocks expired members automatically.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+<h3>WhatsApp Automation</h3><p>18 automated triggers: renewal reminders, birthday wishes, payment receipts, absent alerts. Maximum 1 per day per member. No spam.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+<h3>Lead CRM</h3><p>All leads from Instagram, Google, website, WhatsApp, walk-ins — in one inbox. AI scores each lead hot, warm, or cold. Never lose a lead.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+<h3>Payment Tracking</h3><p>You control all money — cash, card, bank transfer. The system just tracks. Auto-sends WhatsApp receipts. Revenue dashboard. Zero liability.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+<h3>Class Scheduling</h3><p>Recurring classes, online booking, waitlist with auto-notify, live capacity tracking. Cancellation auto-notifies enrolled members.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0 0M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+<h3>Trainer Management</h3><p>Trainer profiles, member assignment, schedules, commission tracking, payroll calculation. Trainer login with limited access.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM12 6v6l4 2"/></svg></div>
+<h3>AI Intelligence</h3><p>Churn prediction: alerts when a member has not visited in 12+ days. Revenue forecast. Three priority actions every morning.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+<h3>Loyalty and Gamification</h3><p>Points per check-in, streak tracking, challenges, achievement badges. Keeps members coming back and referring friends.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 4 5-5"/></svg></div>
+<h3>Reports and Analytics</h3><p>Revenue, member growth, attendance trends, churn rate, lead conversion funnel, trainer performance. Export to PDF or Excel.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/><rect x="2" y="2" width="20" height="20" rx="3" stroke="none" fill="none"/></svg></div>
+<h3>Built For Any Market</h3><p>Works offline. Works on budget phones. Multi-language support. Festival-based offers. Low data usage. No payment gateway required.</p>
+</div>
+
 </div>
 </div>
 </section>
@@ -198,23 +240,25 @@ footer .links a:hover{color:#fff}
 <p>One fixed monthly price. Setup based on gym size. No hidden charges.</p>
 </div>
 <div class="pricing-grid">
+
 <div class="pricing-card">
 <h3>Standard</h3>
 <div class="target">100-200 member gyms</div>
 <div class="price">₹15,000<span> setup</span></div>
 <div class="monthly">+ ₹5,000/month</div>
 <ul>
-<li>Template website (5 pages)</li>
-<li>Full Gym OS system</li>
-<li>QR check-in</li>
-<li>Member management</li>
-<li>Payment tracking</li>
-<li>Basic WhatsApp automation</li>
-<li>Email support (48hr)</li>
-<li>1 staff login</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Template website (5 pages)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full Gym OS system</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> QR check-in</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Member management</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Payment tracking</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Basic WhatsApp automation</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Email support (48hr)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1 staff login</li>
 </ul>
 <a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
 </div>
+
 <div class="pricing-card popular">
 <div class="badge">MOST POPULAR</div>
 <h3>Complete</h3>
@@ -222,36 +266,38 @@ footer .links a:hover{color:#fff}
 <div class="price">₹20,000<span> setup</span></div>
 <div class="monthly">+ ₹5,000/month</div>
 <ul>
-<li>Custom website (9+ pages, SEO)</li>
-<li>Full Gym OS system</li>
-<li>All 18 WhatsApp automations</li>
-<li>Lead CRM (13 sources)</li>
-<li>Class scheduling + booking</li>
-<li>Trainer management</li>
-<li>AI intelligence</li>
-<li>Priority support (24hr)</li>
-<li>3 staff logins</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom website (9+ pages, SEO)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full Gym OS system</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> All 18 WhatsApp automations</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lead CRM (13 sources)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Class scheduling and booking</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Trainer management</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> AI intelligence</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority support (24hr)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 staff logins</li>
 </ul>
 <a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
 </div>
+
 <div class="pricing-card">
 <h3>Premium</h3>
 <div class="target">350+ member gyms</div>
 <div class="price">₹30,000<span> setup</span></div>
 <div class="monthly">+ ₹5,000/month</div>
 <ul>
-<li>Fully custom premium website</li>
-<li>Everything in Complete</li>
-<li>Advanced AI suite</li>
-<li>Loyalty & gamification</li>
-<li>Expense & P&L tracking</li>
-<li>Progress tracking + charts</li>
-<li>Dedicated support (2hr)</li>
-<li>5 staff logins</li>
-<li>Quarterly review call</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fully custom premium website</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Everything in Complete</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Advanced AI suite</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Loyalty and gamification</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Expense and P&L tracking</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Progress tracking and charts</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dedicated support (2hr)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 5 staff logins</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Quarterly review call</li>
 </ul>
 <a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
 </div>
+
 </div>
 </div>
 </section>
@@ -262,17 +308,17 @@ footer .links a:hover{color:#fff}
 <div class="section-title">
 <span class="tag" style="color:#60a5fa">Why Us</span>
 <h2 style="color:#fff">Why Gyms Choose <span style="color:#60a5fa">Gym OS</span></h2>
-<p style="color:#94a3b8">Stop paying for 5 different tools that don't sync</p>
+<p style="color:#94a3b8">Stop paying for 5 different tools that do not sync</p>
 </div>
 <table>
 <tr><th>What You Need</th><th>Buying Separately</th><th>Gym OS</th></tr>
-<tr><td>Custom Website</td><td>₹15,000-25,000</td><td class="gymos">✓ Included</td></tr>
-<tr><td>Gym Software</td><td>₹1,500-3,000/mo</td><td class="gymos">✓ Included</td></tr>
-<tr><td>WhatsApp Automation</td><td>₹2,000-5,000/mo</td><td class="gymos">✓ Included</td></tr>
-<tr><td>Lead CRM</td><td>₹1,000-2,000/mo</td><td class="gymos">✓ Included</td></tr>
-<tr><td>Instagram Management</td><td>₹3,000-10,000/mo</td><td class="gymos">✓ Included</td></tr>
-<tr><td>AI Intelligence</td><td>Not available</td><td class="gymos">✓ Included</td></tr>
-<tr><td>QR Check-in (Offline)</td><td>Not available in India</td><td class="gymos">✓ Included</td></tr>
+<tr><td>Custom Website</td><td>₹15,000-25,000</td><td class="gymos">Included</td></tr>
+<tr><td>Gym Software</td><td>₹1,500-3,000/mo</td><td class="gymos">Included</td></tr>
+<tr><td>WhatsApp Automation</td><td>₹2,000-5,000/mo</td><td class="gymos">Included</td></tr>
+<tr><td>Lead CRM</td><td>₹1,000-2,000/mo</td><td class="gymos">Included</td></tr>
+<tr><td>Social Media Management</td><td>₹3,000-10,000/mo</td><td class="gymos">Included</td></tr>
+<tr><td>AI Intelligence</td><td>Not available</td><td class="gymos">Included</td></tr>
+<tr><td>QR Check-in (Offline)</td><td>Not available</td><td class="gymos">Included</td></tr>
 <tr style="font-weight:bold"><td>Total Cost</td><td>₹40K-65K + ₹18K/mo</td><td class="gymos">₹15K-30K + ₹5K/mo</td></tr>
 </table>
 </div>
@@ -284,11 +330,11 @@ footer .links a:hover{color:#fff}
 <div class="section-title">
 <span class="tag">How It Works</span>
 <h2>How It <span>Works</span></h2>
-<p>From "I'm interested" to fully running in 3 days</p>
+<p>From initial interest to fully running in 3 days</p>
 </div>
 <div class="process-steps">
 <div class="step"><div class="num">1</div><h3>Connect Website</h3><p>We connect your gym's website to Gym OS. Leads, pricing, and schedule auto-sync.</p></div>
-<div class="step"><div class="num">2</div><h3>Import Members</h3><p>We migrate your members from register/Excel into the system. All data, plans, expiry dates.</p></div>
+<div class="step"><div class="num">2</div><h3>Import Members</h3><p>We migrate your members from register or Excel into the system. All data, plans, expiry dates.</p></div>
 <div class="step"><div class="num">3</div><h3>Setup QR + WhatsApp</h3><p>QR check-in at your gym entrance. WhatsApp automation goes live. Staff gets 30-min training.</p></div>
 <div class="step"><div class="num">4</div><h3>System Runs Itself</h3><p>Renewals auto-reminded. Leads auto-captured. AI tells you what to do every morning.</p></div>
 </div>
@@ -298,9 +344,9 @@ footer .links a:hover{color:#fff}
 <!-- CTA -->
 <section class="cta-section">
 <div class="container">
-<h2>You're Losing ₹25,000/Month Right Now</h2>
+<h2>You Are Losing Revenue Every Month</h2>
 <p>Expired members still attending. Renewals nobody reminded. Leads you forgot to follow up. Gym OS stops it all for ₹5,000/month.</p>
-<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo →</a>
+<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
 </div>
 </section>
 
@@ -308,23 +354,22 @@ footer .links a:hover{color:#fff}
 <div class="powered-by">
 <div class="container">
 <p>This is a product of</p>
-<a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank"><img src="logo.png" class="logo-img" alt="Beyond Pixels logo"> Beyond <span>Pixels</span></a>
+<a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank"><img src="logo.png" class="logo-img" alt="Beyond Pixels"> Beyond <span>Pixels</span></a>
 </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
 <div class="container">
-<div class="brand"><img src="logo.png" class="logo-img" alt="Beyond Pixels logo"> Beyond <span>Pixels</span> | Gym OS</div>
-<p>The complete gym management system built for Indian gyms.</p>
+<div class="brand"><img src="logo.png" class="logo-img" alt="Beyond Pixels"> Beyond <span>Pixels</span> | Gym OS</div>
+<p>The complete gym management system.</p>
 <ul class="links">
 <li><a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank">Beyond Pixels</a></li>
-<li><a href="https://beyondhub-bqxcyobv.manus.space" target="_blank">Beyond Reach — Partner Portal</a></li>
 <li><a href="https://github.com/somilsharma2000/gym-os" target="_blank">GitHub</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
 </ul>
-<p>© 2026 Beyond Pixels. All systems live and running.</p>
+<p>&copy; 2026 Beyond Pixels. All systems live and running.</p>
 </div>
 </footer>
 
