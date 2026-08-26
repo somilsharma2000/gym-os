@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gym OS — Complete Gym Management System for Indian Gyms</title>
+<meta name="description" content="Gym OS is a premium gym management platform with QR check-in, WhatsApp automation, lead CRM, member management, AI insights, and a auto-synced website — all in one dashboard.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#0ea5e9;--dark:#0f172a;--slate:#1e293b;--gray:#64748b;--light:#f1f5f9;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--white:#fff}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;overflow-x:hidden}
+a{color:var(--primary);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);z-index:100;padding:16px 0;transition:.3s}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-size:1.4rem;font-weight:800;color:var(--white);display:flex;align-items:center;gap:8px}
+nav .logo span{color:var(--primary)}
+nav ul{display:flex;gap:30px;list-style:none}
+nav ul a{color:var(--light);font-size:.95rem;transition:.2s}
+nav ul a:hover{color:var(--primary)}
+nav .cta{background:var(--primary);color:var(--white)!important;padding:10px 24px;border-radius:8px;font-weight:600}
+@media(max-width:768px){nav ul{display:none}}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0ea5e9 150%);padding:120px 0 80px;color:var(--white);text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.05"/></svg>');opacity:.3}
+.hero h1{font-size:3.2rem;font-weight:800;margin-bottom:20px;line-height:1.2}
+.hero h1 span{background:linear-gradient(to right,#0ea5e9,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.2rem;color:var(--light);max-width:600px;margin:0 auto 30px;opacity:.9}
+.hero .cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero .btn{padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;transition:.2s;border:none;cursor:pointer}
+.hero .btn-primary{background:var(--primary);color:var(--white)}
+.hero .btn-primary:hover{background:#0284c7;transform:translateY(-2px)}
+.hero .btn-outline{background:transparent;color:var(--white);border:2px solid var(--light)}
+.hero .btn-outline:hover{background:var(--white);color:var(--dark)}
+.hero .stats{display:flex;gap:40px;justify-content:center;margin-top:50px;flex-wrap:wrap}
+.hero .stat{text-align:center}
+.hero .stat .num{font-size:2rem;font-weight:800;color:var(--primary)}
+.hero .stat .label{font-size:.85rem;color:var(--light);opacity:.7}
+
+/* SECTION */
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:2.2rem;font-weight:800;margin-bottom:10px}
+.section-title p{color:var(--gray);font-size:1.1rem}
+.section-title h2 span{color:var(--primary)}
+
+/* FEATURES */
+.features{background:var(--light)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.feature-card{background:var(--white);border-radius:12px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s;border:1px solid #e2e8f0}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.feature-card .icon{font-size:2rem;margin-bottom:12px}
+.feature-card h3{font-size:1.15rem;font-weight:700;margin-bottom:8px}
+.feature-card p{color:var(--gray);font-size:.9rem}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.pricing-card{background:var(--white);border-radius:16px;padding:32px;text-align:center;border:2px solid #e2e8f0;position:relative;transition:.2s}
+.pricing-card:hover{border-color:var(--primary);transform:translateY(-4px)}
+.pricing-card.popular{border-color:var(--primary);box-shadow:0 10px 30px rgba(14,165,233,.15)}
+.pricing-card.popular .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--white);padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600}
+.pricing-card h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}
+.pricing-card .target{color:var(--gray);font-size:.85rem;margin-bottom:16px}
+.pricing-card .price{font-size:2.5rem;font-weight:800;color:var(--dark)}
+.pricing-card .price span{font-size:1rem;color:var(--gray);font-weight:400}
+.pricing-card .monthly{color:var(--primary);font-weight:600;margin:8px 0 20px}
+.pricing-card ul{text-align:left;list-style:none;margin-bottom:24px}
+.pricing-card ul li{padding:6px 0;color:var(--slate);font-size:.9rem;display:flex;align-items:center;gap:8px}
+.pricing-card ul li::before{content:'✓';color:var(--green);font-weight:700}
+.pricing-card .btn{display:block;width:100%;padding:12px;border-radius:8px;font-weight:600;border:none;cursor:pointer;transition:.2s}
+.pricing-card .btn{background:var(--light);color:var(--dark)}
+.pricing-card.popular .btn{background:var(--primary);color:var(--white)}
+.pricing-card .btn:hover{opacity:.9}
+
+/* COMPARISON */
+.comparison{background:var(--dark);color:var(--white)}
+.comparison table{width:100%;border-collapse:collapse;max-width:800px;margin:0 auto}
+.comparison th,.comparison td{padding:16px;text-align:left;border-bottom:1px solid var(--slate)}
+.comparison th{color:var(--primary);font-weight:700}
+.comparison td:first-child{font-weight:600}
+.comparison .gymos{color:var(--green);font-weight:700}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:0 auto}
+.step{background:var(--white);border-radius:12px;padding:24px;text-align:center;border:1px solid #e2e8f0}
+.step .num{width:40px;height:40px;background:var(--primary);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px}
+.step h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.step p{color:var(--gray);font-size:.9rem}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--primary),#0284c7);color:var(--white);text-align:center;padding:80px 0}
+.cta-section h2{font-size:2.2rem;font-weight:800;margin-bottom:16px}
+.cta-section p{font-size:1.1rem;opacity:.9;margin-bottom:30px}
+.cta-section .btn{background:var(--white);color:var(--primary);padding:14px 40px;border-radius:10px;font-weight:700;font-size:1.1rem;border:none;cursor:pointer;transition:.2s}
+.cta-section .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+
+/* FOOTER */
+footer{background:var(--dark);color:var(--light);padding:40px 0;text-align:center}
+footer .container{display:flex;flex-direction:column;align-items:center;gap:12px}
+footer .logo{font-size:1.2rem;font-weight:800;color:var(--white)}
+footer .logo span{color:var(--primary)}
+footer p{font-size:.85rem;opacity:.6}
+footer .links{display:flex;gap:20px;list-style:none}
+footer .links a{color:var(--light);font-size:.85rem}
+
+/* ANIMATION */
+.fade-in{opacity:0;transform:translateY(20px);transition:.6s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="container">
+<div class="logo">🏋️ Gym<span>OS</span></div>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#comparison">Why Us</a></li>
+<li><a href="#process">How It Works</a></li>
+</ul>
+<a href="#pricing" class="cta">Get Started</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<div class="container">
+<h1>Turn Your Gym's Register Book Into An <span>Automated System</span></h1>
+<p>Gym OS is the complete gym management platform built for Indian gyms — QR check-in, WhatsApp automation, lead CRM, payments, classes, and a premium website. All from one dashboard on your phone.</p>
+<div class="cta-group">
+<a href="#pricing" class="btn btn-primary">View Pricing →</a>
+<a href="#features" class="btn btn-outline">See All Features</a>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">300+</div><div class="label">Features</div></div>
+<div class="stat"><div class="num">18</div><div class="label">WhatsApp Automations</div></div>
+<div class="stat"><div class="num">13</div><div class="label">Lead Sources</div></div>
+<div class="stat"><div class="num">₹5K/mo</div><div class="label">Fixed Price</div></div>
+</div>
+</div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+<div class="container">
+<div class="section-title">
+<h2>Everything Your Gym Needs — <span>In One System</span></h2>
+<p>Replace your register, billing software, Instagram agency, and CRM with one dashboard</p>
+</div>
+<div class="feature-grid">
+<div class="feature-card"><div class="icon">📊</div><h3>Owner Dashboard</h3><p>One screen shows everything — who's in the gym, today's revenue, new leads, expiring members, and what to do today. Works on any phone.</p></div>
+<div class="feature-card"><div class="icon">🌐</div><h3>Premium Website</h3><p>9+ pages, auto-synced with Gym OS. Change a price → website updates in 5 min. SEO-optimized, captures leads directly into your CRM.</p></div>
+<div class="feature-card"><div class="icon">📱</div><h3>QR Check-In</h3><p>Members scan QR → check-in in 2 seconds. Rotating QR (can't be screenshot). Works offline. Blocks expired members automatically.</p></div>
+<div class="feature-card"><div class="icon">💬</div><h3>WhatsApp Automation</h3><p>18 automated triggers: renewal reminders, birthday wishes, payment receipts, absent alerts. Max 1/day per member. No spam.</p></div>
+<div class="feature-card"><div class="icon">🎯</div><h3>Lead CRM</h3><p>All leads from Instagram, Google, website, WhatsApp, walk-ins — in one inbox. AI scores each lead hot/warm/cold. Never lose a lead.</p></div>
+<div class="feature-card"><div class="icon">💰</div><h3>Payment Tracking</h3><p>You control all money — cash, UPI, card. System just tracks. Auto-sends WhatsApp receipts. Revenue dashboard. Zero liability.</p></div>
+<div class="feature-card"><div class="icon">🏋️</div><h3>Class Scheduling</h3><p>Recurring classes, online booking, waitlist with auto-notify, live capacity tracking. Cancellation auto-notifies enrolled members.</p></div>
+<div class="feature-card"><div class="icon">👨‍🏫</div><h3>Trainer Management</h3><p>Trainer profiles, member assignment, schedules, commission tracking, payroll calculation. Trainer login with limited access.</p></div>
+<div class="feature-card"><div class="icon">🤖</div><h3>AI Intelligence</h3><p>Churn prediction: "Rahul hasn't come in 12 days — at risk." Revenue forecast. "What Should I Do Today" — 3 priority actions every morning.</p></div>
+<div class="feature-card"><div class="icon">🔥</div><h3>Loyalty & Gamification</h3><p>Points per check-in, streak tracking, challenges ("20 days in 30 = 1 month free"), achievement badges. Keeps members coming back.</p></div>
+<div class="feature-card"><div class="icon">📈</div><h3>Reports & Analytics</h3><p>Revenue, member growth, attendance trends, churn rate, lead conversion funnel, trainer performance. Export to PDF/Excel.</p></div>
+<div class="feature-card"><div class="icon">🇮🇳</div><h3>Built for India</h3><p>Works offline. Works on ₹6,000 phones. Hindi + English. Festival-based offers. Low data usage. No payment gateway needed.</p></div>
+</div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+<div class="container">
+<div class="section-title">
+<h2>Simple <span>Pricing</span></h2>
+<p>One fixed monthly price. Setup based on gym size. No hidden charges.</p>
+</div>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h3>Standard</h3>
+<div class="target">100-200 member gyms</div>
+<div class="price">₹15,000<span> setup</span></div>
+<div class="monthly">+ ₹5,000/month</div>
+<ul>
+<li>Template website (5 pages)</li>
+<li>Full Gym OS system</li>
+<li>QR check-in</li>
+<li>Member management</li>
+<li>Payment tracking</li>
+<li>Basic WhatsApp automation</li>
+<li>Email support (48hr)</li>
+<li>1 staff login</li>
+</ul>
+<a href="#" class="btn">Choose Standard</a>
+</div>
+<div class="pricing-card popular">
+<div class="badge">MOST POPULAR</div>
+<h3>Complete</h3>
+<div class="target">200-350 member gyms</div>
+<div class="price">₹20,000<span> setup</span></div>
+<div class="monthly">+ ₹5,000/month</div>
+<ul>
+<li>Custom website (9+ pages, SEO)</li>
+<li>Full Gym OS system</li>
+<li>All 18 WhatsApp automations</li>
+<li>Lead CRM (13 sources)</li>
+<li>Class scheduling + booking</li>
+<li>Trainer management</li>
+<li>AI intelligence</li>
+<li>Priority support (24hr)</li>
+<li>3 staff logins</li>
+</ul>
+<a href="#" class="btn">Choose Complete</a>
+</div>
+<div class="pricing-card">
+<h3>Premium</h3>
+<div class="target">350+ member gyms</div>
+<div class="price">₹30,000<span> setup</span></div>
+<div class="monthly">+ ₹5,000/month</div>
+<ul>
+<li>Fully custom premium website</li>
+<li>Everything in Complete</li>
+<li>Advanced AI suite</li>
+<li>Loyalty & gamification</li>
+<li>Expense & P&L tracking</li>
+<li>Progress tracking + charts</li>
+<li>Dedicated support (2hr)</li>
+<li>5 staff logins</li>
+<li>Quarterly review call</li>
+</ul>
+<a href="#" class="btn">Choose Premium</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison" id="comparison">
+<div class="container">
+<div class="section-title">
+<h2 style="color:#fff">Why Gyms Choose <span style="color:#0ea5e9">Gym OS</span></h2>
+<p style="color:#94a3b8">Stop paying for 5 different tools that don't sync</p>
+</div>
+<table>
+<tr><th>What You Need</th><th>Buying Separately</th><th>Gym OS</th></tr>
+<tr><td>Custom Website</td><td>₹15,000-25,000</td><td class="gymos">✓ Included</td></tr>
+<tr><td>Gym Software</td><td>₹1,500-3,000/mo</td><td class="gymos">✓ Included</td></tr>
+<tr><td>WhatsApp Automation</td><td>₹2,000-5,000/mo</td><td class="gymos">✓ Included</td></tr>
+<tr><td>Lead CRM</td><td>₹1,000-2,000/mo</td><td class="gymos">✓ Included</td></tr>
+<tr><td>Instagram Management</td><td>₹3,000-10,000/mo</td><td class="gymos">✓ Included</td></tr>
+<tr><td>AI Intelligence</td><td>Not available</td><td class="gymos">✓ Included</td></tr>
+<tr><td>QR Check-in (Offline)</td><td>Not available in India</td><td class="gymos">✓ Included</td></tr>
+<tr style="font-weight:bold"><td>Total Cost</td><td>₹40K-65K + ₹18K/mo</td><td class="gymos">₹15K-30K + ₹5K/mo</td></tr>
+</table>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+<div class="container">
+<div class="section-title">
+<h2>How It <span>Works</span></h2>
+<p>From "I'm interested" to fully running in 3 days</p>
+</div>
+<div class="process-steps">
+<div class="step"><div class="num">1</div><h3>Connect Website</h3><p>We connect your gym's website to Gym OS. Leads, pricing, and schedule auto-sync.</p></div>
+<div class="step"><div class="num">2</div><h3>Import Members</h3><p>We migrate your members from register/Excel into the system. All data, plans, expiry dates.</p></div>
+<div class="step"><div class="num">3</div><h3>Setup QR + WhatsApp</h3><p>QR check-in at your gym entrance. WhatsApp automation goes live. Staff gets 30-min training.</p></div>
+<div class="step"><div class="num">4</div><h3>System Runs Itself</h3><p>Renewals auto-reminded. Leads auto-captured. AI tells you what to do every morning.</p></div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<h2>You're Losing ₹25,000/Month Right Now</h2>
+<p>Expired members still attending. Renewals nobody reminded. Leads you forgot to follow up. Gym OS stops it all for ₹5,000/month.</p>
+<a href="#pricing" class="btn">Start Today →</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="logo">🏋️ Gym<span>OS</span></div>
+<p>The complete gym management system built for Indian gyms.</p>
+<ul class="links">
+<li><a href="https://github.com/somilsharma2000/gym-os">GitHub</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#pricing">Pricing</a></li>
+</ul>
+<p>© 2026 Gym OS. Built by Somil Sharma.</p>
+</div>
+</footer>
+
+<script>
+// Scroll animation
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.feature-card,.pricing-card,.step').forEach(el=>{el.classList.add('fade-in');observer.observe(el)});
+// Nav scroll
+window.addEventListener('scroll',()=>{if(window.scrollY>50){document.querySelector('nav').style.padding='10px 0'}else{document.querySelector('nav').style.padding='16px 0'}});
+</script>
+</body>
+</html>
