@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gym OS — by Beyond Pixels | Complete Gym Management System</title>
-<meta name="description" content="Gym OS by Beyond Pixels — a complete gym management platform with QR check-in, WhatsApp automation, lead CRM, member management, AI insights, and a auto-synced website.">
-<meta property="og:title" content="Gym OS — by Beyond Pixels">
+<title>Gym OS — by Beyond Pixells | Complete Gym Management System</title>
+<meta name="description" content="Gym OS by Beyond Pixells — a complete gym management platform with QR check-in, WhatsApp automation, lead CRM, member management, AI insights, and a auto-synced website.">
+<meta property="og:title" content="Gym OS — by Beyond Pixells">
 <meta property="og:description" content="Complete gym management platform with QR check-in, WhatsApp automation, lead CRM, AI insights, and auto-synced website.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://somilsharma2000.github.io/gym-os/logo.png">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +22,6 @@ a{color:var(--blue);text-decoration:none}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
 img.logo-img{width:36px;height:36px;border-radius:50%;object-fit:cover}
 .svg-icon{width:24px;height:24px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
-
-/* NAV */
 nav{position:fixed;top:0;width:100%;background:rgba(11,27,63,.97);backdrop-filter:blur(12px);z-index:100;padding:16px 0;transition:.3s;border-bottom:1px solid rgba(255,255,255,.06)}
 nav .container{display:flex;justify-content:space-between;align-items:center}
 nav .brand{display:flex;align-items:center;gap:10px}
@@ -35,8 +34,6 @@ nav ul a:hover{color:#fff}
 nav .nav-cta{background:var(--blue);color:var(--white)!important;padding:10px 22px;border-radius:8px;font-weight:600;font-size:.9rem;transition:.2s}
 nav .nav-cta:hover{background:var(--blue-light)}
 @media(max-width:900px){nav ul li:not(:last-child){display:none}}
-
-/* HERO */
 .hero{background:var(--navy);color:var(--white);padding:160px 0 100px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 70% 30%,rgba(30,79,216,.25),transparent 50%),radial-gradient(ellipse at 20% 80%,rgba(19,42,94,.4),transparent 50%)}
 .hero .container{position:relative;z-index:1;text-align:center}
@@ -52,16 +49,12 @@ nav .nav-cta:hover{background:var(--blue-light)}
 .hero .btn-primary:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(30,79,216,.35)}
 .hero .btn-ghost{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2)}
 .hero .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3)}
-
-/* SECTION */
 section{padding:100px 0}
 .section-title{text-align:center;margin-bottom:64px;max-width:680px;margin-left:auto;margin-right:auto}
 .section-title .tag{color:var(--blue);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:block}
 .section-title h2{font-size:2.4rem;font-weight:800;margin-bottom:16px;letter-spacing:-.02em}
 .section-title p{color:var(--gray);font-size:1.1rem}
 .section-title h2 span{color:var(--blue)}
-
-/* FEATURES */
 .features{background:var(--light)}
 .feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
 .feature-card{background:var(--white);border-radius:14px;padding:32px;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:.25s;border:1px solid var(--border)}
@@ -69,8 +62,6 @@ section{padding:100px 0}
 .feature-card .icon-wrap{width:48px;height:48px;background:var(--light);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--blue)}
 .feature-card h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
 .feature-card p{color:var(--gray);font-size:.92rem;line-height:1.65}
-
-/* PRICING */
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px;max-width:1020px;margin:0 auto}
 .pricing-card{background:var(--white);border-radius:16px;padding:40px 32px;text-align:center;border:1px solid var(--border);position:relative;transition:.25s}
 .pricing-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
@@ -88,8 +79,7 @@ section{padding:100px 0}
 .pricing-card .btn{background:var(--light);color:var(--navy)}
 .pricing-card.popular .btn{background:var(--blue);color:var(--white)}
 .pricing-card .btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.1)}
-
-/* COMPARISON */
+.pricing-note{text-align:center;margin-top:28px;color:var(--gray);font-size:.88rem}
 .comparison{background:var(--navy);color:var(--white)}
 .comparison .section-title h2{color:#fff}
 .comparison .section-title h2 span{color:#60a5fa}
@@ -100,8 +90,6 @@ section{padding:100px 0}
 .comparison td:first-child{font-weight:600}
 .comparison .gymos{color:var(--green);font-weight:700}
 .comparison tr:last-child td{font-weight:bold;border-bottom:none}
-
-/* PROCESS */
 .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1020px;margin:0 auto}
 .step{background:var(--white);border-radius:14px;padding:32px 24px;text-align:center;border:1px solid var(--border);transition:.25s}
 .step:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(0,0,0,.06)}
@@ -109,7 +97,28 @@ section{padding:100px 0}
 .step h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
 .step p{color:var(--gray);font-size:.88rem;line-height:1.6}
 
-/* DEMO FORM */
+/* FAQ */
+.faq{background:var(--light)}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden;transition:.2s}
+.faq-item:hover{border-color:var(--blue)}
+.faq-item summary{padding:20px 24px;font-weight:600;font-size:.98rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--blue);transition:.2s}
+.faq-item[open] summary::after{content:'\2013'}
+.faq-item .answer{padding:0 24px 20px;color:var(--gray);font-size:.92rem;line-height:1.7}
+
+/* SECURITY */
+.security{background:var(--navy);color:var(--white)}
+.security .section-title h2{color:#fff}
+.security .section-title h2 span{color:#60a5fa}
+.security .section-title p{color:#94a3b8}
+.security-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.security-card{text-align:center;padding:32px}
+.security-card .icon-wrap{width:52px;height:52px;background:rgba(30,79,216,.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#60a5fa}
+.security-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff}
+.security-card p{color:#94a3b8;font-size:.9rem;line-height:1.65}
+
 .demo-section{background:var(--navy);color:var(--white)}
 .demo-section .section-title h2{color:#fff}
 .demo-section .section-title h2 span{color:#60a5fa}
@@ -127,28 +136,24 @@ section{padding:100px 0}
 .demo-form-wrap .wa-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,197,94,.3)}
 .demo-form-wrap .wa-btn:disabled{background:#475569;cursor:not-allowed;opacity:.6}
 .demo-form-wrap .note{font-size:.8rem;color:#64748b;margin-top:14px;text-align:center}
-
-/* CTA */
 .cta-section{background:linear-gradient(135deg,var(--blue),var(--navy-light));color:var(--white);text-align:center;padding:100px 0}
 .cta-section h2{font-size:2.2rem;font-weight:800;margin-bottom:18px;letter-spacing:-.02em}
 .cta-section p{font-size:1.1rem;opacity:.9;margin-bottom:36px;max-width:580px;margin-left:auto;margin-right:auto}
 .cta-section .btn{background:var(--white);color:var(--blue);padding:15px 40px;border-radius:10px;font-weight:700;font-size:1.05rem;border:none;cursor:pointer;transition:.25s;text-decoration:none;display:inline-block}
 .cta-section .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
-
-/* POWERED BY */
 .powered-by{text-align:center;padding:48px 0;background:var(--light);border-top:1px solid var(--border)}
 .powered-by p{color:var(--gray);font-size:.88rem;margin-bottom:12px;font-weight:500}
 .powered-by a{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--navy);font-size:1.15rem;transition:.2s}
 .powered-by a:hover{gap:12px}
 .powered-by a span{color:var(--blue)}
-
-/* FOOTER */
 footer{background:var(--navy);color:#94a3b8;padding:64px 0 32px;border-top:1px solid rgba(255,255,255,.06)}
 footer .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
 @media(max-width:800px){footer .footer-grid{grid-template-columns:1fr;gap:32px}}
 footer .footer-brand .brand{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--white);margin-bottom:12px}
 footer .footer-brand .brand span{color:#60a5fa}
-footer .footer-brand p{font-size:.88rem;line-height:1.7}
+footer .footer-brand p{font-size:.88rem;line-height:1.7;margin-bottom:16px}
+footer .footer-brand .contact-email{display:inline-flex;align-items:center;gap:8px;color:#60a5fa;font-size:.88rem;font-weight:500}
+footer .footer-brand .contact-email:hover{text-decoration:underline}
 footer .footer-col h5{color:var(--white);font-size:.85rem;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
 footer .footer-col ul{list-style:none}
 footer .footer-col ul li{margin-bottom:10px}
@@ -156,7 +161,6 @@ footer .footer-col ul a{color:#94a3b8;font-size:.88rem;transition:.2s}
 footer .footer-col ul a:hover{color:#fff}
 footer .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;text-align:center}
 footer .footer-bottom p{font-size:.84rem}
-
 .fade-in{opacity:0;transform:translateY(24px);transition:.6s}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
@@ -167,17 +171,17 @@ footer .footer-bottom p{font-size:.84rem}
 <nav>
 <div class="container">
 <div class="brand">
-<img src="logo.png" class="logo-img" alt="Beyond Pixels">
-<span class="bp">Beyond Pixels</span>
+<img src="logo.png" class="logo-img" alt="Beyond Pixells">
+<span class="bp">Beyond Pixells</span>
 <span class="sep">|</span>
 <span class="product">Gym OS</span>
 </div>
 <ul>
-<li><a href="https://somilsharma2000.github.io/beyond-pixels/">Beyond Pixels</a></li>
+<li><a href="https://somilsharma2000.github.io/beyond-pixels/">Beyond Pixells</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#comparison">Why Us</a></li>
-<li><a href="#process">How It Works</a></li>
+<li><a href="#faq">FAQ</a></li>
 </ul>
 <a href="#demo" class="nav-cta">Book a Demo</a>
 </div>
@@ -186,7 +190,7 @@ footer .footer-bottom p{font-size:.84rem}
 <!-- HERO -->
 <div class="hero">
 <div class="container">
-<div class="pill"><span class="dot"></span> A Beyond Pixels product — live in real gyms</div>
+<div class="pill"><span class="dot"></span> A Beyond Pixells product — live in real gyms</div>
 <h1>Turn Your Gym's Register Book Into An <span>Automated System</span></h1>
 <p>Gym OS is a complete gym management platform — QR check-in, WhatsApp automation, lead CRM, payments, classes, and a premium website. All from one dashboard on your phone.</p>
 <div class="cta-group">
@@ -283,8 +287,8 @@ footer .footer-bottom p{font-size:.84rem}
 <div class="pricing-card">
 <h3>Standard</h3>
 <div class="target">100-200 member gyms</div>
-<div class="price">₹15,000<span> setup</span></div>
-<div class="monthly">+ ₹5,000/month</div>
+<div class="price">&#8377;15,000<span> setup</span></div>
+<div class="monthly">+ &#8377;5,000/month</div>
 <ul>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Template website (5 pages)</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full Gym OS system</li>
@@ -302,8 +306,8 @@ footer .footer-bottom p{font-size:.84rem}
 <div class="badge">MOST POPULAR</div>
 <h3>Complete</h3>
 <div class="target">200-350 member gyms</div>
-<div class="price">₹20,000<span> setup</span></div>
-<div class="monthly">+ ₹5,000/month</div>
+<div class="price">&#8377;20,000<span> setup</span></div>
+<div class="monthly">+ &#8377;5,000/month</div>
 <ul>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom website (9+ pages, SEO)</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full Gym OS system</li>
@@ -321,8 +325,8 @@ footer .footer-bottom p{font-size:.84rem}
 <div class="pricing-card">
 <h3>Premium</h3>
 <div class="target">350+ member gyms</div>
-<div class="price">₹30,000<span> setup</span></div>
-<div class="monthly">+ ₹5,000/month</div>
+<div class="price">&#8377;30,000<span> setup</span></div>
+<div class="monthly">+ &#8377;5,000/month</div>
 <ul>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fully custom premium website</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Everything in Complete</li>
@@ -338,6 +342,7 @@ footer .footer-bottom p{font-size:.84rem}
 </div>
 
 </div>
+<p class="pricing-note">All prices in INR (&#8377;). Setup fee is one-time. Monthly fee is flat — no per-member charges, no transaction fees.</p>
 </div>
 </section>
 
@@ -346,19 +351,19 @@ footer .footer-bottom p{font-size:.84rem}
 <div class="container">
 <div class="section-title">
 <span class="tag" style="color:#60a5fa">Why Us</span>
-<h2>Why Gyms Choose <span style="color:#60a5fa">Gym OS</span></h2>
-<p>Stop paying for 5 different tools that do not sync</p>
+<h2 style="color:#fff">Why Gyms Choose <span style="color:#60a5fa">Gym OS</span></h2>
+<p style="color:#94a3b8">Stop paying for 5 different tools that do not sync</p>
 </div>
 <table>
 <tr><th>What You Need</th><th>Buying Separately</th><th>Gym OS</th></tr>
-<tr><td>Custom Website</td><td>₹15,000-25,000</td><td class="gymos">Included</td></tr>
-<tr><td>Gym Software</td><td>₹1,500-3,000/mo</td><td class="gymos">Included</td></tr>
-<tr><td>WhatsApp Automation</td><td>₹2,000-5,000/mo</td><td class="gymos">Included</td></tr>
-<tr><td>Lead CRM</td><td>₹1,000-2,000/mo</td><td class="gymos">Included</td></tr>
-<tr><td>Social Media Management</td><td>₹3,000-10,000/mo</td><td class="gymos">Included</td></tr>
+<tr><td>Custom Website</td><td>&#8377;15,000-25,000</td><td class="gymos">Included</td></tr>
+<tr><td>Gym Software</td><td>&#8377;1,500-3,000/mo</td><td class="gymos">Included</td></tr>
+<tr><td>WhatsApp Automation</td><td>&#8377;2,000-5,000/mo</td><td class="gymos">Included</td></tr>
+<tr><td>Lead CRM</td><td>&#8377;1,000-2,000/mo</td><td class="gymos">Included</td></tr>
+<tr><td>Social Media Management</td><td>&#8377;3,000-10,000/mo</td><td class="gymos">Included</td></tr>
 <tr><td>AI Intelligence</td><td>Not available</td><td class="gymos">Included</td></tr>
 <tr><td>QR Check-in (Offline)</td><td>Not available</td><td class="gymos">Included</td></tr>
-<tr><td>Total Cost</td><td>₹40K-65K + ₹18K/mo</td><td class="gymos">₹15K-30K + ₹5K/mo</td></tr>
+<tr><td>Total Cost</td><td>&#8377;40K-65K + &#8377;18K/mo</td><td class="gymos">&#8377;15K-30K + &#8377;5K/mo</td></tr>
 </table>
 </div>
 </section>
@@ -376,6 +381,88 @@ footer .footer-bottom p{font-size:.84rem}
 <div class="step"><div class="num">2</div><h3>Import Members</h3><p>We migrate your members from register or Excel into the system. All data, plans, expiry dates.</p></div>
 <div class="step"><div class="num">3</div><h3>Setup QR + WhatsApp</h3><p>QR check-in at your gym entrance. WhatsApp automation goes live. Staff gets 30-min training.</p></div>
 <div class="step"><div class="num">4</div><h3>System Runs Itself</h3><p>Renewals auto-reminded. Leads auto-captured. AI tells you what to do every morning.</p></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+<div class="container">
+<div class="section-title">
+<span class="tag">FAQ</span>
+<h2>Questions Gym Owners <span>Ask Us</span></h2>
+<p>Everything you need to know before booking a demo</p>
+</div>
+<div class="faq-list">
+
+<details class="faq-item">
+<summary>What happens if my internet goes down?</summary>
+<div class="answer">QR check-in works offline. Members can scan and check in even with no internet. The system syncs automatically once connection is restored. All data is stored locally and uploaded when back online.</div>
+</details>
+
+<details class="faq-item">
+<summary>Do you handle our payments?</summary>
+<div class="answer">No. You control all money — cash, UPI, card, bank transfer. Gym OS only tracks payments and sends receipts. We never touch your funds. Zero liability on our end.</div>
+</details>
+
+<details class="faq-item">
+<summary>Is my gym's data safe?</summary>
+<div class="answer">Yes. All data is encrypted in transit and at rest. Daily automatic backups. You own your data and can export it anytime as Excel or PDF. We never share or sell your data to third parties.</div>
+</details>
+
+<details class="faq-item">
+<summary>Is there a long-term contract?</summary>
+<div class="answer">No long-term lock-in. You pay month to month. Cancel anytime. The setup fee is one-time and covers website creation, data migration, and staff training.</div>
+</details>
+
+<details class="faq-item">
+<summary>Do I need any hardware?</summary>
+<div class="answer">No. You do not need any special hardware. Any phone or tablet can scan the QR code for check-in. No biometric machines, no RFID cards, no servers.</div>
+</details>
+
+<details class="faq-item">
+<summary>How long does setup take?</summary>
+<div class="answer">3 days from sign-up to fully running. Day 1: Website connected. Day 2: Members imported. Day 3: QR check-in and WhatsApp live, staff trained.</div>
+</details>
+
+<details class="faq-item">
+<summary>Can I customize the WhatsApp messages?</summary>
+<div class="answer">Yes. All 18 WhatsApp triggers can be customized with your gym's name, tone, and language. You can also disable any trigger you do not want to use.</div>
+</details>
+
+</div>
+</div>
+</section>
+
+<!-- SECURITY -->
+<section class="security">
+<div class="container">
+<div class="section-title">
+<span class="tag" style="color:#60a5fa">Security</span>
+<h2>Your Data Is <span>Safe With Us</span></h2>
+<p>We take data security seriously — your gym's data belongs to you</p>
+</div>
+<div class="security-grid">
+<div class="security-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24" style="width:28px;height:28px"><path d="M12 2L4 7v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V7l-8-5z"/><path d="M9 12l2 2 4-4"/></svg></div>
+<h3>Encrypted End to End</h3>
+<p>All data encrypted in transit and at rest. Industry-standard encryption protocols.</p>
+</div>
+<div class="security-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24" style="width:28px;height:28px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+<h3>Daily Backups</h3>
+<p>Automatic daily backups. Your data is never lost, even if your device breaks.</p>
+</div>
+<div class="security-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24" style="width:28px;height:28px"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+<h3>You Own Your Data</h3>
+<p>Export anytime as Excel or PDF. Cancel anytime and take your data with you.</p>
+</div>
+<div class="security-card">
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24" style="width:28px;height:28px"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM12 6v6l4 2"/></svg></div>
+<h3>No Data Sharing</h3>
+<p>We never share or sell your gym's data to third parties. No ads. No data brokers.</p>
+</div>
 </div>
 </div>
 </section>
@@ -442,7 +529,7 @@ Send Demo Request via WhatsApp
 <div class="powered-by">
 <div class="container">
 <p>This is a product of</p>
-<a href="https://somilsharma2000.github.io/beyond-pixels/"><img src="logo.png" class="logo-img" alt="Beyond Pixels"> Beyond <span>Pixels</span></a>
+<a href="https://somilsharma2000.github.io/beyond-pixels/"><img src="logo.png" class="logo-img" alt="Beyond Pixells"> Beyond <span>Pixells</span></a>
 </div>
 </div>
 
@@ -451,8 +538,12 @@ Send Demo Request via WhatsApp
 <div class="container">
 <div class="footer-grid">
 <div class="footer-brand">
-<div class="brand"><img src="logo.png" class="logo-img" alt="Beyond Pixels"> Beyond <span>Pixels</span> | Gym OS</div>
+<div class="brand"><img src="logo.png" class="logo-img" alt="Beyond Pixells"> Beyond <span>Pixells</span> | Gym OS</div>
 <p>The complete gym management system. Built for local businesses worldwide.</p>
+<a href="mailto:beyondpixells@gmail.com" class="contact-email">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+beyondpixells@gmail.com
+</a>
 </div>
 <div class="footer-col">
 <h5>Product</h5>
@@ -460,25 +551,25 @@ Send Demo Request via WhatsApp
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#comparison">Why Us</a></li>
+<li><a href="#faq">FAQ</a></li>
 <li><a href="#demo">Book a Demo</a></li>
 </ul>
 </div>
 <div class="footer-col">
 <h5>Company</h5>
 <ul>
-<li><a href="https://somilsharma2000.github.io/beyond-pixels/">Beyond Pixels</a></li>
+<li><a href="https://somilsharma2000.github.io/beyond-pixels/">Beyond Pixells</a></li>
 <li><a href="https://github.com/somilsharma2000/gym-os">GitHub</a></li>
 </ul>
 </div>
 </div>
 <div class="footer-bottom">
-<p>&copy; 2026 Beyond Pixels. All systems live and running.</p>
+<p>&copy; 2026 Beyond Pixells. All systems live and running.</p>
 </div>
 </div>
 </footer>
 
 <script>
-// Demo request form -> WhatsApp
 const dBtn = document.getElementById('d-send');
 const dFields = ['d-name','d-gym','d-city','d-phone'];
 function checkDemoReady(){
@@ -501,9 +592,8 @@ dBtn.addEventListener('click', function(e){
   window.location.href = `https://wa.me/${waNumber}?text=${msg}`;
 });
 
-// Scroll animations
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
-document.querySelectorAll('.feature-card,.pricing-card,.step,.product-card').forEach(el=>{el.classList.add('fade-in');observer.observe(el)});
+document.querySelectorAll('.feature-card,.pricing-card,.step,.security-card').forEach(el=>{el.classList.add('fade-in');observer.observe(el)});
 window.addEventListener('scroll',()=>{document.querySelector('nav').style.padding=window.scrollY>50?'10px 0':'16px 0'});
 </script>
 </body>
