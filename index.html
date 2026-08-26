@@ -27,7 +27,7 @@ nav ul a{color:#cbd5e1;font-size:.92rem;transition:.2s}
 nav ul a:hover{color:#fff}
 nav .nav-cta{background:var(--blue);color:var(--white)!important;padding:9px 20px;border-radius:8px;font-weight:600;font-size:.9rem;transition:.2s}
 nav .nav-cta:hover{background:#3b6ae8}
-@media(max-width:768px){nav ul li:not(:last-child):not(:nth-last-child(1)){display:none}}
+@media(max-width:768px){nav ul li:not(:last-child){display:none}}
 
 /* HERO */
 .hero{background:linear-gradient(135deg,var(--navy) 0%,#132a5e 50%,var(--blue) 150%);padding:140px 0 100px;color:var(--white);text-align:center}
@@ -95,6 +95,25 @@ section{padding:80px 0}
 .step h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
 .step p{color:var(--gray);font-size:.88rem}
 
+/* DEMO FORM */
+.demo-section{background:linear-gradient(135deg,var(--navy),#132a5e);color:var(--white)}
+.demo-section .section-title h2{color:#fff}
+.demo-section .section-title h2 span{color:#60a5fa}
+.demo-section .section-title p{color:#94a3b8}
+.demo-form-wrap{max-width:520px;margin:0 auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:36px}
+.demo-form-wrap .sub{font-size:.88rem;color:#94a3b8;margin-bottom:22px;text-align:center}
+.demo-form-wrap .field{margin-bottom:14px}
+.demo-form-wrap .field label{display:block;font-size:.82rem;color:#cbd5e1;margin-bottom:4px;font-weight:600}
+.demo-form-wrap .field input,.demo-form-wrap .field select{width:100%;padding:11px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:var(--white);font-size:.9rem;font-family:inherit;outline:none;transition:.2s}
+.demo-form-wrap .field input::placeholder{color:#64748b}
+.demo-form-wrap .field input:focus,.demo-form-wrap .field select:focus{border-color:var(--blue);background:rgba(255,255,255,.08)}
+.demo-form-wrap .field select option{background:var(--navy)}
+.demo-form-wrap .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.demo-form-wrap .wa-btn{width:100%;padding:14px;border-radius:10px;border:none;background:var(--green);color:var(--white);font-weight:700;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;font-family:inherit;margin-top:6px}
+.demo-form-wrap .wa-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 20px rgba(34,197,94,.3)}
+.demo-form-wrap .wa-btn:disabled{background:#475569;cursor:not-allowed;opacity:.6}
+.demo-form-wrap .note{font-size:.78rem;color:#64748b;margin-top:10px;text-align:center}
+
 /* CTA */
 .cta-section{background:linear-gradient(135deg,var(--blue),#132a5e);color:var(--white);text-align:center;padding:80px 0}
 .cta-section h2{font-size:2.2rem;font-weight:800;margin-bottom:16px}
@@ -134,13 +153,13 @@ footer .links a:hover{color:#fff}
 <span class="product">Gym OS</span>
 </div>
 <ul>
-<li><a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank">Beyond Pixels</a></li>
+<li><a href="https://somilsharma2000.github.io/beyond-pixels/">Beyond Pixels</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#comparison">Why Us</a></li>
 <li><a href="#process">How It Works</a></li>
 </ul>
-<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="nav-cta">Book a Demo</a>
+<a href="#demo" class="nav-cta">Book a Demo</a>
 </div>
 </nav>
 
@@ -152,7 +171,7 @@ footer .links a:hover{color:#fff}
 <p>Gym OS is a complete gym management platform — QR check-in, WhatsApp automation, lead CRM, payments, classes, and a premium website. All from one dashboard on your phone.</p>
 <div class="cta-group">
 <a href="#pricing" class="btn btn-primary">View Pricing</a>
-<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn btn-outline">Book a Demo</a>
+<a href="#demo" class="btn btn-outline">Book a Demo</a>
 </div>
 </div>
 </div>
@@ -223,7 +242,7 @@ footer .links a:hover{color:#fff}
 </div>
 
 <div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/><rect x="2" y="2" width="20" height="20" rx="3" stroke="none" fill="none"/></svg></div>
+<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
 <h3>Built For Any Market</h3><p>Works offline. Works on budget phones. Multi-language support. Festival-based offers. Low data usage. No payment gateway required.</p>
 </div>
 
@@ -256,7 +275,7 @@ footer .links a:hover{color:#fff}
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Email support (48hr)</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1 staff login</li>
 </ul>
-<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
+<a href="#demo" class="btn">Book a Demo</a>
 </div>
 
 <div class="pricing-card popular">
@@ -276,7 +295,7 @@ footer .links a:hover{color:#fff}
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority support (24hr)</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 staff logins</li>
 </ul>
-<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
+<a href="#demo" class="btn">Book a Demo</a>
 </div>
 
 <div class="pricing-card">
@@ -295,7 +314,7 @@ footer .links a:hover{color:#fff}
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 5 staff logins</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Quarterly review call</li>
 </ul>
-<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
+<a href="#demo" class="btn">Book a Demo</a>
 </div>
 
 </div>
@@ -341,12 +360,61 @@ footer .links a:hover{color:#fff}
 </div>
 </section>
 
+<!-- DEMO FORM -->
+<section class="demo-section" id="demo">
+<div class="container">
+<div class="section-title">
+<span class="tag" style="color:#60a5fa">Book a Demo</span>
+<h2>See Gym OS <span>Running Live</span></h2>
+<p>Fill the form and we will set up a personalized demo for your gym</p>
+</div>
+<div class="demo-form-wrap">
+<div class="sub">Enter your details and send directly via WhatsApp. We respond within 24 hours.</div>
+<div class="two-col">
+<div class="field">
+<label>Your Name</label>
+<input type="text" id="d-name" placeholder="Gym owner name">
+</div>
+<div class="field">
+<label>Gym Name</label>
+<input type="text" id="d-gym" placeholder="Your gym name">
+</div>
+</div>
+<div class="two-col">
+<div class="field">
+<label>City</label>
+<input type="text" id="d-city" placeholder="Your city">
+</div>
+<div class="field">
+<label>Phone</label>
+<input type="tel" id="d-phone" placeholder="Your phone number">
+</div>
+</div>
+<div class="field">
+<label>Number of Members</label>
+<select id="d-members">
+<option value="">Select range</option>
+<option value="Under 100">Under 100</option>
+<option value="100-200">100-200</option>
+<option value="200-350">200-350</option>
+<option value="350+">350+</option>
+</select>
+</div>
+<button class="wa-btn" id="d-send" disabled>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.88 11.89L4 20l4.22-1.11a7.93 7.93 0 0 0 3.79.97h.04a7.94 7.94 0 0 0 7.93-7.94 7.86 7.86 0 0 0-2.38-5.6zm-5.6 12.2a6.55 6.55 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.54 6.54 0 0 1 3.34-9.78 6.54 6.54 0 0 1 6.86 1.16 6.54 6.54 0 0 1-3.79 11.7z"/></svg>
+Send Demo Request via WhatsApp
+</button>
+<div class="note">You will be redirected to WhatsApp with your details pre-filled. We respond within 24 hours.</div>
+</div>
+</div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section">
 <div class="container">
 <h2>You Are Losing Revenue Every Month</h2>
 <p>Expired members still attending. Renewals nobody reminded. Leads you forgot to follow up. Gym OS stops it all for ₹5,000/month.</p>
-<a href="https://beyondhub-bqxcyobv.manus.space" target="_blank" class="btn">Book a Demo</a>
+<a href="#demo" class="btn">Book a Demo</a>
 </div>
 </section>
 
@@ -354,7 +422,7 @@ footer .links a:hover{color:#fff}
 <div class="powered-by">
 <div class="container">
 <p>This is a product of</p>
-<a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank"><img src="logo.png" class="logo-img" alt="Beyond Pixels"> Beyond <span>Pixels</span></a>
+<a href="https://somilsharma2000.github.io/beyond-pixels/"><img src="logo.png" class="logo-img" alt="Beyond Pixels"> Beyond <span>Pixels</span></a>
 </div>
 </div>
 
@@ -364,8 +432,8 @@ footer .links a:hover{color:#fff}
 <div class="brand"><img src="logo.png" class="logo-img" alt="Beyond Pixels"> Beyond <span>Pixels</span> | Gym OS</div>
 <p>The complete gym management system.</p>
 <ul class="links">
-<li><a href="https://somilsharma2000.github.io/beyond-pixels/" target="_blank">Beyond Pixels</a></li>
-<li><a href="https://github.com/somilsharma2000/gym-os" target="_blank">GitHub</a></li>
+<li><a href="https://somilsharma2000.github.io/beyond-pixels/">Beyond Pixels</a></li>
+<li><a href="https://github.com/somilsharma2000/gym-os">GitHub</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
 </ul>
@@ -374,6 +442,32 @@ footer .links a:hover{color:#fff}
 </footer>
 
 <script>
+// Demo request form -> WhatsApp
+const dBtn = document.getElementById('d-send');
+const dFields = ['d-name','d-gym','d-city','d-phone'];
+function checkDemoReady(){
+  const ready = dFields.every(id => document.getElementById(id).value.trim() !== '') && document.getElementById('d-members').value !== '';
+  dBtn.disabled = !ready;
+}
+dFields.forEach(id => document.getElementById(id).addEventListener('input', checkDemoReady));
+document.getElementById('d-members').addEventListener('change', checkDemoReady);
+
+dBtn.addEventListener('click', function(e){
+  e.preventDefault();
+  if(dBtn.disabled) return;
+  const name = document.getElementById('d-name').value.trim();
+  const gym = document.getElementById('d-gym').value.trim();
+  const city = document.getElementById('d-city').value.trim();
+  const phone = document.getElementById('d-phone').value.trim();
+  const members = document.getElementById('d-members').value || 'Not specified';
+
+  const waNumber = 'WHATSAPP_NUMBER_PLACEHOLDER';
+  const msg = `Gym OS — Demo Request%0A%0A*Name:* ${name}%0A*Gym:* ${gym}%0A*City:* ${city}%0A*Phone:* ${phone}%0A*Members:* ${members}%0A%0AI would like to book a personalized demo of Gym OS.`;
+  const waUrl = `https://wa.me/${waNumber}?text=${msg}`;
+  window.location.href = waUrl;
+});
+
+// Scroll animations
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.feature-card,.pricing-card,.step').forEach(el=>{el.classList.add('fade-in');observer.observe(el)});
 window.addEventListener('scroll',()=>{document.querySelector('nav').style.padding=window.scrollY>50?'8px 0':'14px 0'});
