@@ -3,732 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gym OS — Powering iGym Hyderabad | Complete Gym Management System</title>
-<meta name="description" content="Gym OS by Beyond Pixells — complete gym management platform powering iGym Gachibowli with 24/7 QR check-in, AI equipment tracking, WhatsApp automation, lead CRM, and auto-synced website.">
-<meta property="og:title" content="Gym OS — Powering iGym Hyderabad">
-<meta property="og:description" content="Complete gym management platform powering iGym Gachibowli with 24/7 QR check-in, AI equipment tracking, WhatsApp CRM, and auto-synced website.">
+<title>Beyond Pixels — SaaS & Web Solutions | Custom Websites, Gym OS, Integrations</title>
+<meta name="description" content="Beyond Pixels builds custom websites, SaaS platforms, and software integrations for any business. From Gym OS to full web applications — we solve your business problems with technology.">
+<meta property="og:title" content="Beyond Pixels — SaaS & Web Solutions">
+<meta property="og:description" content="Custom websites, Gym OS, API integrations, and workflow automation for any business.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://somilsharma2000.github.io/gym-os/og-image.png">
 <link rel="icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#070E20;
-  --navy-light:#0B132B;
-  --navy-card:#0F172A;
-  --navy-card-hover:#132247;
-  --blue:#00D9FF;
-  --blue-light:#38BDF8;
-  --blue-dark:#0EA5E9;
-  --slate:#F8FAFC;
-  --gray:#94A3B8;
-  --gray-light:#CBD5E1;
-  --green:#10B981;
-  --white:#FFFFFF;
-  --border:rgba(0, 217, 255, 0.15);
-  --border-glow:rgba(0, 217, 255, 0.35);
-}
+:root{--navy:#0A0E27;--navy-light:#0F1430;--navy-card:#141B3D;--blue:#0066FF;--blue-light:#3B82F6;--blue-glow:rgba(0,102,255,0.3);--slate:#F8FAFC;--gray:#94A3B8;--gray-light:#CBD5E1;--green:#10B981;--white:#FFFFFF;--border:rgba(0,102,255,0.15);--border-glow:rgba(0,102,255,0.35)}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--slate);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px}
-a{color:var(--blue);text-decoration:none}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--slate);line-height:1.6;overflow-x:hidden;font-size:16px}
+a{color:var(--blue-light);text-decoration:none}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
-img.logo-img{width:36px;height:36px;border-radius:50%;object-fit:cover}
-.svg-icon{width:24px;height:24px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
-
-/* NAVIGATION */
-nav{position:fixed;top:0;width:100%;background:rgba(7,14,32,.95);backdrop-filter:blur(12px);z-index:100;padding:16px 0;transition:.3s;border-bottom:1px solid var(--border)}
+nav{position:fixed;top:0;width:100%;background:rgba(10,14,39,0.95);backdrop-filter:blur(12px);z-index:100;padding:16px 0;border-bottom:1px solid var(--border)}
 nav .container{display:flex;justify-content:space-between;align-items:center}
 nav .brand{display:flex;align-items:center;gap:10px}
-nav .brand .bp{font-size:1.1rem;font-weight:800;color:var(--white)}
-nav .brand .sep{color:#475569;font-size:1.2rem}
-nav .brand .product{font-size:1.1rem;font-weight:700;color:var(--blue)}
+nav .brand img{width:36px;height:36px;border-radius:50%}
+nav .brand .name{font-size:1.1rem;font-weight:800;color:var(--white)}
 nav ul{display:flex;gap:32px;list-style:none;align-items:center}
 nav ul a{color:var(--gray-light);font-size:.92rem;font-weight:500;transition:.2s}
-nav ul a:hover{color:var(--blue)}
-nav .nav-cta-group{display:flex;gap:12px;align-items:center}
-nav .nav-demo-btn{background:transparent;border:1px solid var(--border-glow);color:var(--blue)!important;padding:9px 18px;border-radius:8px;font-weight:600;font-size:.88rem;transition:.2s}
-nav .nav-demo-btn:hover{background:rgba(0,217,255,.1);border-color:var(--blue)}
-nav .nav-cta{background:var(--blue);color:#070E20!important;padding:10px 20px;border-radius:8px;font-weight:700;font-size:.9rem;transition:.2s}
-nav .nav-cta:hover{background:var(--blue-light);box-shadow:0 0 15px rgba(0,217,255,.4)}
-
+nav ul a:hover{color:var(--blue-light)}
+nav .nav-cta{background:var(--blue);color:var(--white)!important;padding:10px 20px;border-radius:8px;font-weight:700;font-size:.9rem}
+nav .nav-cta:hover{background:var(--blue-light)}
 @media(max-width:900px){nav ul{display:none}}
-@media(max-width:600px){.hero h1{font-size:2.1rem}.hero p{font-size:1rem}.section-title h2{font-size:1.8rem}}
-
-/* HERO */
-.hero{background:radial-gradient(circle at 50% 20%,rgba(0,217,255,.15),transparent 65%),var(--navy);color:var(--white);padding:160px 0 100px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 80% 20%,rgba(0,217,255,.08),transparent 50%),radial-gradient(ellipse at 20% 80%,rgba(14,165,233,.1),transparent 50%)}
-.hero .container{position:relative;z-index:1;text-align:center}
-.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,217,255,.08);border:1px solid var(--border-glow);padding:8px 20px;border-radius:24px;font-size:.85rem;margin-bottom:28px;color:var(--blue);font-weight:600;letter-spacing:.02em}
+.hero{background:radial-gradient(circle at 50% 20%,rgba(0,102,255,0.12),transparent 65%),var(--navy);color:var(--white);padding:160px 0 100px;text-align:center;position:relative;overflow:hidden}
+.hero .container{position:relative;z-index:1}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,255,0.08);border:1px solid var(--border-glow);padding:8px 20px;border-radius:24px;font-size:.85rem;margin-bottom:28px;color:var(--blue-light);font-weight:600}
 .hero .pill .dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .hero h1{font-size:3.2rem;font-weight:800;margin-bottom:24px;line-height:1.15;letter-spacing:-.02em;max-width:920px;margin-left:auto;margin-right:auto}
-.hero h1 span{background:linear-gradient(135deg,#00D9FF 0%,#38BDF8 50%,#60A5FA 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 span{background:linear-gradient(135deg,#0066FF,#3B82F6,#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero p{font-size:1.15rem;color:var(--gray);max-width:700px;margin:0 auto 40px}
-.hero .cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
-
+.hero .cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .btn{padding:15px 32px;border-radius:10px;font-weight:700;font-size:1rem;transition:.25s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:inherit}
-.btn-primary{background:var(--blue);color:#070E20}
-.btn-primary:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,217,255,.4)}
-.btn-secondary{background:rgba(0,217,255,.12);color:var(--blue);border:1px solid var(--border-glow)}
-.btn-secondary:hover{background:rgba(0,217,255,.22);border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,217,255,.2)}
-.btn-ghost{background:transparent;color:var(--slate);border:1px solid rgba(255,255,255,.2)}
-.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
-
-/* SECTIONS */
+.btn-primary{background:var(--blue);color:var(--white)}
+.btn-primary:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 8px 25px var(--blue-glow)}
+.btn-secondary{background:rgba(0,102,255,0.12);color:var(--blue-light);border:1px solid var(--border-glow)}
+.btn-secondary:hover{background:rgba(0,102,255,0.22);border-color:var(--blue)}
+.btn-whatsapp{background:#25D366;color:#fff}
+.btn-whatsapp:hover{background:#22c35e;transform:translateY(-2px)}
 section{padding:100px 0}
 .section-title{text-align:center;margin-bottom:64px;max-width:720px;margin-left:auto;margin-right:auto}
-.section-title .tag{color:var(--blue);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px;display:block}
-.section-title h2{font-size:2.4rem;font-weight:800;margin-bottom:16px;letter-spacing:-.02em;color:var(--white)}
+.section-title .tag{color:var(--blue-light);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px;display:block}
+.section-title h2{font-size:2.4rem;font-weight:800;margin-bottom:16px;color:var(--white)}
+.section-title h2 span{color:var(--blue-light)}
 .section-title p{color:var(--gray);font-size:1.1rem}
-.section-title h2 span{color:var(--blue)}
-
-/* SHOWCASE SECTION */
-.showcase-section{background:var(--navy-light);border-bottom:1px solid var(--border)}
-.showcase-card{background:var(--navy-card);border:1px solid var(--border-glow);border-radius:20px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;box-shadow:0 10px 40px rgba(0,0,0,.3)}
-@media(max-width:850px){.showcase-card{grid-template-columns:1fr;text-align:center}}
-.showcase-info h3{font-size:1.8rem;font-weight:800;color:var(--white);margin-bottom:12px}
-.showcase-info .badge-tag{display:inline-block;background:rgba(0,217,255,.15);color:var(--blue);font-size:.85rem;font-weight:700;padding:4px 14px;border-radius:12px;margin-bottom:16px;border:1px solid var(--border)}
-.showcase-info p{color:var(--gray);margin-bottom:20px;font-size:1rem;line-height:1.7}
-.showcase-meta{list-style:none;margin-bottom:28px;text-align:left}
-.showcase-meta li{margin-bottom:10px;color:var(--slate);font-size:.95rem;display:flex;align-items:flex-start;gap:10px}
-.showcase-meta li svg{color:var(--blue);flex-shrink:0;margin-top:3px}
-.showcase-quote{background:rgba(0,217,255,.05);border-left:3px solid var(--blue);padding:20px;border-radius:0 12px 12px 0;font-style:italic;color:var(--gray-light);font-size:.95rem}
-.showcase-quote .author{font-style:normal;font-weight:700;color:var(--white);margin-top:10px;display:block}
-
-/* FEATURES */
-.features{background:var(--navy-light);border-bottom:1px solid var(--border)}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-.feature-card{background:var(--navy-card);border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,.2);transition:.25s;border:1px solid var(--border)}
-.feature-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,217,255,.15);border-color:var(--blue);background:var(--navy-card-hover)}
-.feature-card .icon-wrap{width:50px;height:50px;background:rgba(0,217,255,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--blue);border:1px solid var(--border)}
-.feature-card h3{font-size:1.15rem;font-weight:700;margin-bottom:12px;color:var(--white)}
-.feature-card p{color:var(--gray);font-size:.94rem;line-height:1.65}
-
-/* PRICING */
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;max-width:1060px;margin:0 auto}
-.pricing-card{background:var(--navy-card);border-radius:18px;padding:40px 32px;text-align:center;border:1px solid var(--border);position:relative;transition:.25s}
-.pricing-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,217,255,.1);border-color:var(--blue)}
-.pricing-card.popular{border:2px solid var(--blue);box-shadow:0 12px 40px rgba(0,217,255,.2);background:#111E40}
-.pricing-card.popular .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:#070E20;padding:6px 18px;border-radius:20px;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.pricing-card h3{font-size:1.4rem;font-weight:800;margin-bottom:8px;color:var(--white)}
-.pricing-card .target{color:var(--gray);font-size:.88rem;margin-bottom:20px}
-.pricing-card .price{font-size:2.7rem;font-weight:900;color:var(--white);letter-spacing:-.02em}
-.pricing-card .price span{font-size:1rem;color:var(--gray);font-weight:500}
-.pricing-card .monthly{color:var(--blue);font-weight:700;margin:10px 0 24px;font-size:1.05rem}
-.pricing-card ul{text-align:left;list-style:none;margin-bottom:32px}
-.pricing-card ul li{padding:9px 0;color:var(--slate);font-size:.92rem;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.05)}
-.pricing-card ul li:last-child{border-bottom:none}
-.pricing-card ul li svg{width:18px;height:18px;color:var(--green);flex-shrink:0}
-.pricing-card .btn{display:block;width:100%;padding:14px;border-radius:10px;font-weight:700;text-align:center;text-decoration:none;font-size:.98rem;font-family:inherit}
-.pricing-card .btn{background:rgba(255,255,255,.08);color:var(--white);border:1px solid rgba(255,255,255,.15)}
-.pricing-card.popular .btn{background:var(--blue);color:#070E20;border:none}
-.pricing-card .btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,217,255,.3)}
-.pricing-note{text-align:center;margin-top:32px;color:var(--gray);font-size:.9rem}
-
-/* COMPARISON */
-.comparison{background:var(--navy-light);border-bottom:1px solid var(--border)}
-.comparison table{width:100%;border-collapse:collapse;max-width:860px;margin:0 auto;background:var(--navy-card);border-radius:16px;overflow:hidden;border:1px solid var(--border)}
-.comparison th,.comparison td{padding:18px 24px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
-.comparison th{color:var(--blue);font-weight:700;font-size:.92rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(0,217,255,.05)}
-.comparison td:first-child{font-weight:600;color:var(--white)}
-.comparison .gymos{color:var(--green);font-weight:700}
-
-/* PROCESS */
-.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1020px;margin:0 auto}
-.step{background:var(--navy-card);border-radius:16px;padding:32px 24px;text-align:center;border:1px solid var(--border);transition:.25s}
-.step:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(0,217,255,.1)}
-.step .num{width:44px;height:44px;background:var(--blue);color:#070E20;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;margin:0 auto 16px;font-size:1.1rem}
-.step h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--white)}
-.step p{color:var(--gray);font-size:.88rem;line-height:1.6}
-
-/* FAQ */
-.faq{background:var(--navy-light);border-bottom:1px solid var(--border)}
-.faq-list{max-width:800px;margin:0 auto}
-.faq-item{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden;transition:.2s}
-.faq-item:hover{border-color:var(--blue)}
-.faq-item summary{padding:20px 24px;font-weight:700;font-size:1rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--white)}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--blue);transition:.2s}
-.faq-item[open] summary::after{content:'3'}
-.faq-item .answer{padding:0 24px 20px;color:var(--gray);font-size:.95rem;line-height:1.7}
-
-/* SECURITY */
-.security{background:var(--navy);border-bottom:1px solid var(--border)}
-.security-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
-.security-card{background:var(--navy-card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center}
-.security-card .icon-wrap{width:52px;height:52px;background:rgba(0,217,255,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--blue);border:1px solid var(--border)}
-.security-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--white)}
-.security-card p{color:var(--gray);font-size:.88rem;line-height:1.6}
-
-/* DEMO FORM */
-.demo-section{background:var(--navy-light);border-bottom:1px solid var(--border)}
-.demo-form-wrap{max-width:580px;margin:0 auto;background:var(--navy-card);border:1px solid var(--border-glow);border-radius:20px;padding:40px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-.demo-form-wrap .sub{text-align:center;color:var(--gray);font-size:.95rem;margin-bottom:28px}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-@media(max-width:550px){.two-col{grid-template-columns:1fr}}
-.field{margin-bottom:16px;text-align:left}
-.field label{display:block;font-size:.85rem;font-weight:600;color:var(--gray-light);margin-bottom:6px}
-.field input,.field select{width:100%;padding:12px 16px;background:#070E20;border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.95rem;font-family:inherit;transition:.2s;outline:none}
-.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 10px rgba(0,217,255,.2)}
-.wa-btn{width:100%;padding:15px;background:#25D366;color:#000;font-weight:800;font-size:1rem;border:none;border-radius:10px;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;margin-top:10px}
-.wa-btn:hover:not(:disabled){background:#20ba5a;transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,.3)}
-.wa-btn:disabled{opacity:.5;cursor:not-allowed}
-.note{text-align:center;color:var(--gray);font-size:.82rem;margin-top:14px}
-
-/* CTA SECTION */
-.cta-section{background:radial-gradient(circle at 50% 50%,rgba(0,217,255,.15),transparent 70%),var(--navy);text-align:center;padding:100px 0;border-bottom:1px solid var(--border)}
-.cta-section h2{font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:16px}
-.cta-section p{color:var(--gray);max-width:620px;margin:0 auto 36px;font-size:1.1rem}
-
-/* POWERED BY */
-.powered-by{background:#050A18;padding:32px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,.05)}
-.powered-by p{color:var(--gray);font-size:.85rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
-.powered-brand{display:inline-flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--white)}
-.powered-brand span{color:var(--blue)}
-
-/* FOOTER */
-footer{background:#050A18;padding:60px 0 30px;color:var(--gray);font-size:.9rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
-.footer-brand .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;color:var(--white);margin-bottom:12px}
-.footer-brand p{max-width:380px;margin-bottom:16px;line-height:1.6}
-.footer-brand .contact-email{color:var(--blue);display:inline-flex;align-items:center;gap:8px;font-weight:600}
-.footer-col h5{color:var(--white);font-size:.95rem;font-weight:700;margin-bottom:16px}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:10px}
-.footer-col ul a{color:var(--gray);transition:.2s}
-.footer-col ul a:hover{color:var(--blue)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center;font-size:.85rem}
-
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-@keyframes spin{to{transform:rotate(360deg)}}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+.services{background:var(--navy-light)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.service-card{background:var(--navy-card);border:1px solid var(--border);border-radius:16px;padding:36px;transition:.3s}
+.service-card:hover{border-color:var(--border-glow);transform:translateY(-4px)}
+.service-card .icon{width:56px;height:56px;background:rgba(0,102,255,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.8rem}
+.service-card h3{font-size:1.35rem;font-weight:700;color:var(--white);margin-bottom:12px}
+.service-card p{color:var(--gray);font-size:.95rem;margin-bottom:16px}
+.service-card ul{list-style:none}
+.service-card ul li{color:var(--gray-light);font-size:.9rem;margin-bottom:8px;padding-left:20px;position:relative}
+.service-card ul li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--blue);border-radius:50%}
+.service-card .featured{display:inline-block;background:rgba(0,102,255,0.15);color:var(--blue-light);font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:8px;margin-bottom:16px}
+.problems-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px}
+.problem-card{background:var(--navy-card);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:28px}
+.problem-card .pain{color:#EF4444;font-weight:700;font-size:.85rem;margin-bottom:8px}
+.problem-card h4{color:var(--white);font-size:1.1rem;margin-bottom:10px}
+.problem-card .solution{color:var(--gray);font-size:.9rem}
+.problem-card .solution strong{color:var(--blue-light)}
+.process{background:var(--navy-light)}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.process-step{text-align:center;padding:28px}
+.process-step .num{width:48px;height:48px;background:var(--blue);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;margin:0 auto 16px}
+.process-step h4{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:8px}
+.process-step p{color:var(--gray);font-size:.9rem}
+.gymos-card{background:var(--navy-card);border:1px solid var(--border-glow);border-radius:20px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:850px){.gymos-card{grid-template-columns:1fr}}
+.gymos-info h3{font-size:1.8rem;font-weight:800;color:var(--white);margin-bottom:12px}
+.gymos-info .badge{display:inline-block;background:rgba(0,102,255,0.15);color:var(--blue-light);font-size:.85rem;font-weight:700;padding:4px 14px;border-radius:12px;margin-bottom:16px}
+.gymos-info p{color:var(--gray);margin-bottom:20px}
+.gymos-features{list-style:none;margin-bottom:28px}
+.gymos-features li{margin-bottom:10px;color:var(--gray-light);font-size:.95rem;padding-left:20px;position:relative}
+.gymos-features li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--blue);border-radius:50%}
+.stats{background:var(--navy-light);padding:60px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;text-align:center}
+.stat h3{font-size:2.5rem;font-weight:900;color:var(--blue-light);margin-bottom:8px}
+.stat p{color:var(--gray);font-size:.9rem}
+.cta-box{background:linear-gradient(135deg,var(--navy-card),var(--navy-light));border:1px solid var(--border-glow);border-radius:24px;padding:64px 48px;text-align:center}
+.cta-box h2{font-size:2.2rem;font-weight:800;color:var(--white);margin-bottom:16px}
+.cta-box p{color:var(--gray);font-size:1.1rem;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto}
+.cta-box .cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta-box .offer{display:inline-block;background:rgba(16,185,129,0.15);color:var(--green);font-size:.85rem;font-weight:700;padding:6px 16px;border-radius:12px;margin-bottom:20px}
+footer{background:var(--navy-light);padding:48px 0;border-top:1px solid var(--border)}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+footer .copy{color:var(--gray);font-size:.85rem;width:100%;text-align:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:600px){.hero h1{font-size:2.1rem}.hero p{font-size:1rem}.section-title h2{font-size:1.8rem}.cta-box h2{font-size:1.6rem}}
 </style>
 </head>
 <body>
-
-<!-- NAVIGATION -->
-<nav>
-<div class="container">
-<div class="brand">
-<img src="logo.png" class="logo-img" alt="Beyond Pixells">
-<span class="bp">Beyond Pixells</span>
-<span class="sep">|</span>
-<span class="product">Gym OS</span>
-</div>
-<ul>
-<li><a href="#showcase">iGym Demo</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#pricing">Pricing</a></li>
-<li><a href="#comparison">Why Us</a></li>
-<li><a href="#faq">FAQ</a></li>
-</ul>
-<div class="nav-cta-group">
-<a href="https://somilsharma2000.github.io/gym-os-frontend/" class="nav-demo-btn">Live Demo</a>
-<a href="#demo" class="nav-cta">Book a Demo</a>
-</div>
-</div>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-<div class="container">
-<div class="pill"><span class="dot"></span> Live at iGym Gachibowli — Hyderabad's First 7-Star AI-Enabled Fitness Club</div>
-<h1>The Complete Gym OS Powering <span>Hyderabad's First 7-Star AI-Enabled Fitness Club</span></h1>
-<p>Gym OS is the all-in-one platform handling 24/7 QR entry, AI equipment tracking, WhatsApp CRM, automated class bookings, and luxury facility management for premier clubs like iGym Gachibowli.</p>
-<div class="cta-group">
-<a href="#demo" class="btn btn-primary">Book a Demo</a>
-<a href="https://somilsharma2000.github.io/gym-os-frontend/" class="btn btn-secondary">Experience Live iGym Demo</a>
-<a href="#pricing" class="btn btn-ghost">View Pricing</a>
-</div>
-</div>
-</div>
-
-<!-- SHOWCASE SECTION (iGym Gachibowli) -->
-<section class="showcase-section" id="showcase">
-<div class="container">
-<div class="section-title">
-<span class="tag">Live Demo Gym</span>
-<h2>Powering <span>iGym Gachibowli</span></h2>
-<p>See how Hyderabad's premier 7-star fitness club operates using Gym OS</p>
-</div>
-<div class="showcase-card">
-<div class="showcase-info">
-<span class="badge-tag">7-Star AI-Enabled Club</span>
-<h3>iGym Gachibowli</h3>
-<p>Located in Diamond Hills, Lumbini Avenue, iGym is Hyderabad's premier 7-star fitness club. Using Gym OS, iGym delivers seamless 24/7 access, AI equipment tracking, and automated luxury amenities.</p>
-<ul class="showcase-meta">
-<li><svg class="svg-icon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Diamond Hills, Lumbini Avenue, Gachibowli, Hyderabad 500032</li>
-<li><svg class="svg-icon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.79 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 90915 99159</li>
-<li><svg class="svg-icon" viewBox="0 0 24 24" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 24/7 Automated Access &amp; AI-Enabled Equipment</li>
-</ul>
-<a href="https://somilsharma2000.github.io/gym-os-frontend/" class="btn btn-primary">Explore Live iGym Demo Page</a>
-</div>
-<div class="showcase-quote">
-&ldquo;Gym OS transformed our entire operational workflow at iGym Gachibowli. Managing round-the-clock 24/7 QR access, AI equipment analytics, sauna &amp; spa appointments, and WhatsApp renewal reminders is effortless with one unified platform.&rdquo;
-<span class="author">&mdash; iGym Management, Gachibowli, Hyderabad</span>
-</div>
-</div>
-</div>
-</section>
-
-<!-- FEATURES -->
-<section class="features" id="features">
-<div class="container">
-<div class="section-title">
-<span class="tag">Features</span>
-<h2>Everything Your Gym Needs &mdash; <span>In One System</span></h2>
-<p>Replace register books, standalone CRM software, manual scheduling, and social media tools with one unified dashboard</p>
-</div>
-<div class="feature-grid">
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
-<h3>Owner Dashboard</h3>
-<p>One screen shows real-time gym occupancy, daily revenue, active leads, expiring memberships, and staff action items. Works on any smartphone or tablet.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M14 3h7v7M3 14l7 7"/></svg></div>
-<h3>24/7 Access &amp; QR Check-In</h3>
-<p>Automated round-the-clock QR entry for 24/7 access. Rotating QR codes prevent screenshot sharing, work offline, and automatically block expired accounts.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM12 6v6l4 2"/></svg></div>
-<h3>AI-Enabled Equipment Integration</h3>
-<p>Track equipment utilization, workout session logs, and automated maintenance alerts across smart AI cardio and strength gear.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-<h3>WhatsApp Automation</h3>
-<p>18 automated triggers: renewal reminders, payment receipts, birthday greetings, absent alerts, and spa confirmations. Controlled frequency prevents spam.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-<h3>Lead CRM &amp; AI Scoring</h3>
-<p>All leads from Instagram, Google, website, WhatsApp, and walk-ins in one unified inbox. AI automatically scores each lead hot, warm, or cold.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-<h3>Auto-Synced Club Website</h3>
-<p>9+ custom pages auto-synced with Gym OS. Update pricing or schedule once and your website updates instantly. SEO optimized for local lead capture.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-<h3>Sauna, Spa &amp; Grooming Access</h3>
-<p>Automated booking, digital pass validation, and access control for luxury sauna &amp; spa facilities, grooming stations, and private recovery suites.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg></div>
-<h3>Zone Occupancy Tracking</h3>
-<p>Real-time occupancy monitoring across premium cardio zones, strength training areas, and functional training zones for optimal member flow.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-<h3>Functional Training &amp; Classes</h3>
-<p>Recurring class schedules, personal training bookings, automated waitlists, and instant cancellation notifications sent directly via WhatsApp.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-<h3>Payment Tracking &amp; Revenue CRM</h3>
-<p>Full control over cash, UPI, card, and bank transfers. Gym OS tracks payments, sends automated receipts, and provides clear financial reporting.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0 0M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-<h3>Trainer &amp; Staff Management</h3>
-<p>Trainer profiles, member assignments, session logs, commission calculation, and role-based staff logins with customizable access permissions.</p>
-</div>
-
-<div class="feature-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-<h3>Loyalty &amp; Churn Prevention AI</h3>
-<p>Points per check-in, streak rewards, and AI churn intelligence that flags inactive members (12+ days absent) for automated re-engagement.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-<div class="container">
-<div class="section-title">
-<span class="tag">Pricing</span>
-<h2>Simple, Transparent <span>Pricing</span></h2>
-<p>Flat monthly price with setup tailored to your facility size. No hidden transaction fees.</p>
-</div>
-<div class="pricing-grid">
-
-<div class="pricing-card">
-<h3>Starter</h3>
-<div class="target">100-200 member gyms</div>
-<div class="price">&#8377;15,000<span> setup</span></div>
-<div class="monthly">+ &#8377;3,500/month</div>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Template website (5 pages)</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full Gym OS core system</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 24/7 QR check-in</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Member management</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Payment tracking</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Basic WhatsApp automation</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Email support (48hr)</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1 staff login</li>
-</ul>
-<a href="#demo" class="btn">Book a Demo</a>
-</div>
-
-<div class="pricing-card popular">
-<div class="badge">MOST POPULAR</div>
-<h3>Standard</h3>
-<div class="target">200-350 member gyms</div>
-<div class="price">&#8377;20,000<span> setup</span></div>
-<div class="monthly">+ &#8377;4,000/month</div>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom website (9+ pages, SEO)</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full Gym OS system</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> All 18 WhatsApp automations</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lead CRM (13 sources)</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Functional training &amp; class booking</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Trainer management</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> AI intelligence &amp; equipment tracking</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority support (24hr)</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 staff logins</li>
-</ul>
-<a href="#demo" class="btn">Book a Demo</a>
-</div>
-
-<div class="pricing-card">
-<h3>Premium</h3>
-<div class="target">350+ member / 7-Star Clubs</div>
-<div class="price">&#8377;30,000<span> setup</span></div>
-<div class="monthly">+ &#8377;4,500/month</div>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fully custom 7-star club website</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Everything in Standard</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Advanced AI suite &amp; churn prevention</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Multi-zone access (sauna, spa, grooming, locker)</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Loyalty &amp; gamification system</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Expense &amp; P&amp;L reporting</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dedicated support (2hr)</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 5 staff logins</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Quarterly review call</li>
-</ul>
-<a href="#demo" class="btn">Book a Demo</a>
-</div>
-
-</div>
-<p class="pricing-note">All prices in INR (&#8377;). Setup fee is one-time. Monthly fee is flat &mdash; no per-member charges, no transaction fees.</p>
-</div>
-</section>
-
-<!-- COMPARISON -->
-<section class="comparison" id="comparison">
-<div class="container">
-<div class="section-title">
-<span class="tag">Why Us</span>
-<h2>Why Clubs Choose <span>Gym OS</span></h2>
-<p>Stop paying for 5 disconnected tools that do not sync</p>
-</div>
-<table>
-<tr><th>What You Need</th><th>Buying Separately</th><th>Gym OS</th></tr>
-<tr><td>Custom 7-Star Website</td><td>&#8377;20,000-35,000</td><td class="gymos">Included</td></tr>
-<tr><td>Gym Management Software</td><td>&#8377;2,000-4,000/mo</td><td class="gymos">Included</td></tr>
-<tr><td>WhatsApp Automation CRM</td><td>&#8377;2,500-5,000/mo</td><td class="gymos">Included</td></tr>
-<tr><td>Lead CRM &amp; AI Scoring</td><td>&#8377;1,500-3,000/mo</td><td class="gymos">Included</td></tr>
-<tr><td>24/7 Access &amp; Spa Control</td><td>&#8377;3,000-8,000/mo</td><td class="gymos">Included</td></tr>
-<tr><td>AI Equipment Analytics</td><td>Not available</td><td class="gymos">Included</td></tr>
-<tr><td>QR Check-in (Offline)</td><td>Not available</td><td class="gymos">Included</td></tr>
-<tr><td>Total Cost</td><td>&#8377;50K-80K + &#8377;20K/mo</td><td class="gymos">&#8377;15K-30K + &#8377;5K/mo</td></tr>
-</table>
-</div>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-<div class="container">
-<div class="section-title">
-<span class="tag">How It Works</span>
-<h2>How It <span>Works</span></h2>
-<p>From initial demo to live operational deployment in 3 days</p>
-</div>
-<div class="process-steps">
-<div class="step"><div class="num">1</div><h3>Connect Website</h3><p>We connect your gym's website to Gym OS. Leads, pricing, and schedules auto-sync in real time.</p></div>
-<div class="step"><div class="num">2</div><h3>Import Members</h3><p>We migrate your member database from registers or Excel into Gym OS with plans and expiry dates.</p></div>
-<div class="step"><div class="num">3</div><h3>Setup 24/7 QR + WhatsApp</h3><p>QR check-in deployed at your entrance. WhatsApp automations activated. Staff receives 30-min training.</p></div>
-<div class="step"><div class="num">4</div><h3>System Runs Itself</h3><p>Renewals auto-reminded, leads scored by AI, and daily management priorities updated automatically.</p></div>
-</div>
-</div>
-</section>
-
-<!-- FAQ -->
-<section class="faq" id="faq">
-<div class="container">
-<div class="section-title">
-<span class="tag">FAQ</span>
-<h2>Questions Club Owners <span>Ask Us</span></h2>
-<p>Everything you need to know before booking a demo</p>
-</div>
-<div class="faq-list">
-
-<details class="faq-item">
-<summary>Does 24/7 QR check-in work if the internet goes down?</summary>
-<div class="answer">Yes. QR check-in operates fully offline. Members scan and enter smoothly even without active internet. The system syncs data automatically as soon as connection is restored.</div>
-</details>
-
-<details class="faq-item">
-<summary>How does Gym OS handle 7-star luxury amenities like sauna, spa, and grooming stations?</summary>
-<div class="answer">Gym OS provides multi-zone access control. Members can book sauna, spa, or functional training sessions via WhatsApp or website, and staff can validate digital passes at grooming stations and locker rooms.</div>
-</details>
-
-<details class="faq-item">
-<summary>Do you process our membership payments directly?</summary>
-<div class="answer">No. You maintain full control over all money &mdash; cash, UPI, card, or bank transfer. Gym OS tracks payments, manages accounts, and auto-issues WhatsApp receipts with zero transaction fees.</div>
-</details>
-
-<details class="faq-item">
-<summary>Is our club and member data secure?</summary>
-<div class="answer">Yes. All data is encrypted in transit and at rest with automated daily backups. You retain 100% ownership of your data and can export it anytime to Excel or PDF.</div>
-</details>
-
-<details class="faq-item">
-<summary>Is there a long-term contract lock-in?</summary>
-<div class="answer">No long-term contract required. You pay month-to-month and can cancel anytime. The one-time setup fee covers custom website setup, member migration, and staff training.</div>
-</details>
-
-<details class="faq-item">
-<summary>Do we need special hardware or biometric machines?</summary>
-<div class="answer">No special hardware required. Any smartphone or tablet can scan the QR code for instant check-in. No expensive biometric hardware, cards, or local servers required.</div>
-</details>
-
-<details class="faq-item">
-<summary>How long does full onboarding take?</summary>
-<div class="answer">3 days from sign-up to fully live. Day 1: Website connected. Day 2: Member records imported. Day 3: QR check-in and WhatsApp live, staff trained.</div>
-</details>
-
-<details class="faq-item">
-<summary>Can we customize the automated WhatsApp messages?</summary>
-<div class="answer">Yes. All 18 WhatsApp automation triggers can be tailored with your club's brand name, tone, and preferred language. You can also toggle specific triggers on or off anytime.</div>
-</details>
-
-</div>
-</div>
-</section>
-
-<!-- SECURITY -->
-<section class="security">
-<div class="container">
-<div class="section-title">
-<span class="tag">Security</span>
-<h2>Your Data Is <span>Safe With Us</span></h2>
-<p>Enterprise-grade security built for premier fitness clubs</p>
-</div>
-<div class="security-grid">
-<div class="security-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2L4 7v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V7l-8-5z"/><path d="M9 12l2 2 4-4"/></svg></div>
-<h3>Encrypted End to End</h3>
-<p>All data is encrypted in transit and at rest using industry-standard protocols.</p>
-</div>
-<div class="security-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
-<h3>Automated Daily Backups</h3>
-<p>Continuous daily cloud backups guarantee your club records are safe and recoverable.</p>
-</div>
-<div class="security-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-<h3>100% Data Ownership</h3>
-<p>Export your full database anytime as Excel or PDF. No vendor lock-in.</p>
-</div>
-<div class="security-card">
-<div class="icon-wrap"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM12 6v6l4 2"/></svg></div>
-<h3>Strict Privacy</h3>
-<p>We never share or monetize your club or member information. Zero third-party ads.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- DEMO FORM -->
-<section class="demo-section" id="demo">
-<div class="container">
-<div class="section-title">
-<span class="tag">Book a Demo</span>
-<h2>See Gym OS <span>Running Live</span></h2>
-<p>Fill out the form below to receive a personalized live walk-through for your club</p>
-</div>
-<div class="demo-form-wrap">
-<div class="sub">Submit your details to connect directly with our team on WhatsApp. We respond within 24 hours.</div>
-<div class="two-col">
-<div class="field">
-<label>Your Name</label>
-<input type="text" id="d-name" placeholder="Club owner / manager name">
-</div>
-<div class="field">
-<label>Gym / Club Name</label>
-<input type="text" id="d-gym" placeholder="Your gym name">
-</div>
-</div>
-<div class="two-col">
-<div class="field">
-<label>City</label>
-<input type="text" id="d-city" placeholder="Your city">
-</div>
-<div class="field">
-<label>Phone</label>
-<input type="tel" id="d-phone" placeholder="Your phone number">
-</div>
-</div>
-<div class="field">
-<label>Number of Members</label>
-<select id="d-members">
-<option value="">Select range</option>
-<option value="Under 100">Under 100</option>
-<option value="100-200">100-200</option>
-<option value="200-350">200-350</option>
-<option value="350+">350+</option>
-</select>
-</div>
-<button class="wa-btn" id="d-send" disabled>
-<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.88 11.89L4 20l4.22-1.11a7.93 7.93 0 0 0 3.79.97h.04a7.94 7.94 0 0 0 7.93-7.94 7.86 7.86 0 0 0-2.38-5.6zm-5.6 12.2a6.55 6.55 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.54 6.54 0 0 1 3.34-9.78 6.54 6.54 0 0 1 6.86 1.16 6.54 6.54 0 0 1-3.79 11.7z"/></svg>
-Send Demo Request via WhatsApp
-</button>
-<div class="note">You will be redirected to WhatsApp (+91 917737077479) with details pre-filled. We respond within 24 hours.</div>
-        <div id="form-status" style="display:none;margin-top:14px;padding:14px;border-radius:8px;font-size:.9rem;text-align:center;font-weight:600"></div>
-</div>
-</div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-<div class="container">
-<h2>Eliminate Revenue Leakage In Your Gym</h2>
-<p>Stop expired memberships, unreminded renewals, and uncaptured leads. Gym OS automates your entire operational workflow for one transparent flat price.</p>
-<a href="#demo" class="btn btn-primary">Book a Demo</a>
-</div>
-</section>
-
-<!-- POWERED BY -->
-<div class="powered-by">
-<div class="container">
-<p>This is a product of</p>
-<span class="powered-brand"><img src="logo.png" class="logo-img" alt="Beyond Pixells"> Beyond <span>Pixells</span></span>
-</div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<div class="brand"><img src="logo.png" class="logo-img" alt="Beyond Pixells"> Beyond <span>Pixells</span> | Gym OS</div>
-<p>The complete gym management system powering premier fitness clubs worldwide.</p>
-<a href="mailto:beyondpixells@gmail.com" class="contact-email">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-beyondpixells@gmail.com
-</a>
-</div>
-<div class="footer-col">
-<h5>Product</h5>
-<ul>
-<li><a href="#showcase">iGym Demo</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#pricing">Pricing</a></li>
-<li><a href="#comparison">Why Us</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#demo">Book a Demo</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h5>Support</h5>
-<ul>
-<li><a href="mailto:beyondpixells@gmail.com">Email Us</a></li>
-<li><a href="https://wa.me/917737077479">WhatsApp (+91 917737077479)</a></li>
-<li><a href="#faq">FAQ</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>&copy; 2026 Beyond Pixells. All systems live and running.</p>
-</div>
-</div>
-</footer>
-
-<script>
-const dBtn = document.getElementById('d-send');
-const dFields = ['d-name','d-gym','d-city','d-phone'];
-const formStatus = document.getElementById('form-status');
-const WEBHOOK_URL = 'https://base44.app/api/apps/6a700b150c8d8b8e923580a1/functions/receiveLeadWebhook';
-
-function checkDemoReady(){
-  const ready = dFields.every(id => document.getElementById(id).value.trim() !== '') && document.getElementById('d-members').value !== '';
-  dBtn.disabled = !ready;
-}
-dFields.forEach(id => document.getElementById(id).addEventListener('input', checkDemoReady));
-document.getElementById('d-members').addEventListener('change', checkDemoReady);
-
-dBtn.addEventListener('click', async function(e){
-  e.preventDefault();
-  if(dBtn.disabled) return;
-  const name = document.getElementById('d-name').value.trim();
-  const gym = document.getElementById('d-gym').value.trim();
-  const city = document.getElementById('d-city').value.trim();
-  const phone = document.getElementById('d-phone').value.trim();
-  const members = document.getElementById('d-members').value || 'Not specified';
-
-  dBtn.disabled = true;
-  dBtn.innerHTML = '<span style="display:inline-block;width:18px;height:18px;border:2px solid rgba(0,0,0,.3);border-top-color:#000;border-radius:50%;animation:spin 1s linear infinite"></span> Submitting...';
-
-  try {
-    // 1. Submit lead to CRM
-    await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: name,
-        phone: phone,
-        email: '',
-        fitness_goal: 'Demo request for ' + gym + ' (' + members + ' members, ' + city + ')',
-        source: 'website',
-        gym_id: 'gym_oxigen',
-        consent: true
-      })
-    });
-
-    formStatus.style.display = 'block';
-    formStatus.style.background = 'rgba(16,185,129,.15)';
-    formStatus.style.color = '#10B981';
-    formStatus.style.border = '1px solid rgba(16,185,129,.4)';
-    formStatus.textContent = 'Lead captured in CRM. Redirecting to WhatsApp...';
-  } catch(err) {
-    formStatus.style.display = 'block';
-    formStatus.style.background = 'rgba(239,68,68,.15)';
-    formStatus.style.color = '#ef4444';
-    formStatus.style.border = '1px solid rgba(239,68,68,.4)';
-    formStatus.textContent = 'Could not submit to CRM, but redirecting to WhatsApp.';
-  }
-
-  // 2. Redirect to WhatsApp after 1.5s
-  setTimeout(() => {
-    const waNumber = '917737077479';
-    const msg = `Gym OS — Demo Request%0A%0A*Name:* ${name}%0A*Gym:* ${gym}%0A*City:* ${city}%0A*Phone:* ${phone}%0A*Members:* ${members}%0A%0AI would like to book a personalized demo of Gym OS.`;
-    window.location.href = `https://wa.me/${waNumber}?text=${msg}`;
-  }, 1500);
-});
-
-const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
-document.querySelectorAll('.feature-card,.pricing-card,.step,.security-card,.showcase-card').forEach(el=>{el.classList.add('fade-in');observer.observe(el)});
-window.addEventListener('scroll',()=>{document.querySelector('nav').style.padding=window.scrollY>50?'10px 0':'16px 0'});
-</script>
+<nav><div class="container"><div class="brand"><img src="logo.png" alt="Beyond Pixels"><span class="name">Beyond Pixels</span></div><ul><li><a href="#services">Services</a></li><li><a href="#problems">Problems We Solve</a></li><li><a href="#process">Process</a></li><li><a href="#gymos">Gym OS</a></li></ul><a href="https://wa.me/917737077479?text=Hi%20Beyond%20Pixels%2C%20I%27d%20like%20a%20free%20consultation" class="nav-cta" target="_blank">Free Consultation</a></div></nav>
+<section class="hero"><div class="container"><div class="pill"><span class="dot"></span> Available for new projects</div><h1>We Build <span>Custom Websites</span> & SaaS Platforms That Solve Real Business Problems</h1><p>No templates. No generic solutions. We build custom web applications, integrate your tools, and automate your workflows — for any business, any industry.</p><div class="cta-group"><a href="https://wa.me/917737077479?text=Hi%20Beyond%20Pixels%2C%20I%27d%20like%20a%20free%20consultation" class="btn btn-primary" target="_blank">Get Free Consultation</a><a href="#services" class="btn btn-secondary">Explore Services</a></div></div></section>
+<section class="stats"><div class="container"><div class="stats-grid"><div class="stat"><h3>Any Industry</h3><p>We build for gyms, clinics, restaurants, retail & more</p></div><div class="stat"><h3>Any Integration</h3><p>Payments, CRM, WhatsApp, booking, ERP — if it has an API, we connect it</p></div><div class="stat"><h3>Zero Templates</h3><p>Every project built from scratch, tailored to your business</p></div><div class="stat"><h3>Free Strategy</h3><p>DM us to discuss your project — no cost, no obligation</p></div></div></div></section>
+<section class="services" id="services"><div class="container"><div class="section-title"><span class="tag">What We Build</span><h2>Full-Service <span>SaaS & Web Solutions</span></h2><p>From a simple business website to a full SaaS platform with complex integrations — we build it all.</p></div><div class="services-grid">
+<div class="service-card"><div class="icon">🌐</div><h3>Custom Website Development</h3><p>High-converting, responsive websites built for your specific business. No templates.</p><ul><li>Fast loading (under 2 seconds)</li><li>Mobile-first design</li><li>Lead capture built in</li><li>SEO optimized</li><li>Any integration: payments, booking, CRM</li></ul></div>
+<div class="service-card"><div class="icon">⚙️</div><span class="featured">Flagship Product</span><h3>Gym OS</h3><p>All-in-one gym management platform. QR check-in, CRM, revenue analytics, WhatsApp automation, class scheduling.</p><ul><li>QR Code Check-in — 2-second member check-in</li><li>Automated CRM — leads followed up automatically</li><li>Revenue Analytics — real-time dashboards</li><li>WhatsApp Automation — welcome, renewals, win-backs</li><li>Class Scheduling — drag-and-drop with auto-waitlist</li></ul></div>
+<div class="service-card"><div class="icon">🔌</div><h3>API & Integrations</h3><p>Connect your existing tools into one unified platform. If it has an API, we can integrate it.</p><ul><li>Payment Gateways: Razorpay, Stripe, PhonePe</li><li>CRM: HubSpot, Zoho, Salesforce</li><li>Communication: WhatsApp, SMS, Email</li><li>Booking: Calendly, custom calendars</li><li>ERP: Tally, SAP, custom</li></ul></div>
+<div class="service-card"><div class="icon">🤖</div><h3>Workflow Automation</h3><p>Eliminate repetitive tasks. Automate your operations so you can focus on growth.</p><ul><li>Lead capture + automated follow-ups</li><li>Payment processing + invoicing</li><li>WhatsApp messaging + automation</li><li>Real-time dashboards + analytics</li><li>Booking + scheduling automation</li></ul></div>
+<div class="service-card"><div class="icon">🎨</div><h3>UI/UX Design</h3><p>Intuitive interfaces that convert visitors into customers. Design that works as good as it looks.</p><ul><li>User research & wireframing</li><li>Interactive prototyping</li><li>Conversion-optimized layouts</li><li>Design systems & component libraries</li><li>Mobile-first responsive design</li></ul></div>
+<div class="service-card"><div class="icon">🚀</div><h3>SaaS Platform Development</h3><p>Full SaaS platforms built from scratch. Multi-tenant, scalable, and ready for growth.</p><ul><li>Custom architecture & database design</li><li>Multi-tenant systems</li><li>Subscription & billing integration</li><li>Admin dashboards & analytics</li><li>Cloud deployment (AWS, GCP, Azure)</li></ul></div>
+</div></div></section>
+<section class="problems" id="problems"><div class="container"><div class="section-title"><span class="tag">Business Problem-Solving</span><h2>Does This Sound Like <span>Your Business?</span></h2><p>If you have any of these problems, we can build the solution.</p></div><div class="problems-grid">
+<div class="problem-card"><div class="pain">⚠ Problem</div><h4>Too many tools, none connected</h4><p class="solution"><strong>We build ONE platform</strong> that does everything — payments, CRM, WhatsApp, booking, analytics — all integrated.</p></div>
+<div class="problem-card"><div class="pain">⚠ Problem</div><h4>Your website doesn't generate leads</h4><p class="solution"><strong>We rebuild it</strong> with conversion-focused design, lead capture, and SEO that ranks.</p></div>
+<div class="problem-card"><div class="pain">⚠ Problem</div><h4>Manual work eating your time</h4><p class="solution"><strong>We automate it</strong> — lead follow-ups, renewals, check-ins, reminders. Your business runs itself.</p></div>
+<div class="problem-card"><div class="pain">⚠ Problem</div><h4>No visibility into revenue or operations</h4><p class="solution"><strong>We build real-time dashboards</strong> that show exactly what's happening — revenue, attendance, leads, churn.</p></div>
+<div class="problem-card"><div class="pain">⚠ Problem</div><h4>Leads going cold with no follow-up</h4><p class="solution"><strong>We automate your CRM</strong> — instant welcome, Day 1 follow-up, Day 3 check-in, Day 7 close. No lead lost.</p></div>
+<div class="problem-card"><div class="pain">⚠ Problem</div><h4>Your industry needs specific software</h4><p class="solution"><strong>We build it from scratch</strong> — Gym OS, Restaurant OS, Clinic OS. If your workflow can be described, we can build it.</p></div>
+</div></div></section>
+<section class="process" id="process"><div class="container"><div class="section-title"><span class="tag">How We Work</span><h2>From Idea to <span>Launch in 5 Steps</span></h2><p>A clear, transparent process. You know exactly what's happening at every stage.</p></div><div class="process-steps">
+<div class="process-step"><div class="num">1</div><h4>Discovery</h4><p>We learn your business inside out — problems, workflow, goals.</p></div>
+<div class="process-step"><div class="num">2</div><h4>Design</h4><p>We design the UX, architecture, and user flows before coding.</p></div>
+<div class="process-step"><div class="num">3</div><h4>Development</h4><p>We build it with modern tech — fast, secure, scalable.</p></div>
+<div class="process-step"><div class="num">4</div><h4>Integration</h4><p>We connect your existing tools — payments, CRM, WhatsApp, ERP.</p></div>
+<div class="process-step"><div class="num">5</div><h4>Launch</h4><p>We deploy, test, and support. Your platform goes live.</p></div>
+</div></div></section>
+<section class="gymos" id="gymos"><div class="container"><div class="section-title"><span class="tag">Flagship Product</span><h2>Gym OS — <span>All-in-One Gym Management</span></h2><p>Our flagship SaaS platform, built specifically for gym owners. Now powering gyms across India.</p></div><div class="gymos-card"><div class="gymos-info"><span class="badge">Flagship SaaS Product</span><h3>Built for Gym Owners Who Run on Data, Not Guesswork</h3><p>Gym OS handles everything — from QR check-in to automated CRM to revenue analytics. Your gym runs itself.</p><ul class="gymos-features"><li>QR Code Check-in — 2-second member check-in</li><li>Automated CRM — leads followed up automatically</li><li>Revenue Analytics — real-time dashboards</li><li>WhatsApp Automation — welcome, renewals, win-backs</li><li>Class Scheduling — drag-and-drop with auto-waitlist</li><li>Trainer Management — performance tracking</li><li>Custom Gym Website — high-converting, SEO-optimized</li></ul><a href="https://wa.me/917737077479?text=Hi%2C%20I%27m%20interested%20in%20Gym%20OS" class="btn btn-primary" target="_blank">Book Gym OS Demo</a></div><div class="gymos-info"><h3>What Gym Owners Say</h3><p>"Before Gym OS, I spent 4 hours a day on admin. Now I spend 20 minutes. My leads are followed up automatically, my revenue is tracked in real-time, and my members check in with a QR code."</p><div style="background:rgba(0,102,255,0.05);border-left:3px solid var(--blue);padding:20px;border-radius:0 12px 12px 0;margin-top:20px;"><p style="font-style:italic;color:var(--gray-light);font-size:.95rem;">"Gym OS replaced 5 different tools. One subscription, everything connected."</p><p style="font-weight:700;color:var(--white);margin-top:10px;font-size:.9rem;">— Gym Owner, Hyderabad</p></div></div></div></div></section>
+<section class="cta-section" style="padding:100px 0"><div class="container"><div class="cta-box"><div class="offer">FREE — No Cost, No Obligation</div><h2>Let's Discuss Your Project</h2><p>Whether you need a custom website, a SaaS platform, an API integration, or workflow automation — DM us and let's talk. Free strategy session, no commitment.</p><div class="cta-group"><a href="https://wa.me/917737077479?text=Hi%20Beyond%20Pixels%2C%20I%27d%20like%20a%20free%20consultation" class="btn btn-whatsapp" target="_blank">Chat on WhatsApp</a><a href="https://www.instagram.com/beyondpixellls/" class="btn btn-primary" target="_blank">DM on Instagram</a></div><p style="color:var(--gray);font-size:.85rem;margin-top:24px;">Any business. Any industry. Any complexity. Any integration.</p></div></div></section>
+<footer><div class="container"><div style="display:flex;align-items:center;gap:10px"><img src="logo.png" style="width:32px;height:32px;border-radius:50%" alt="Beyond Pixels"><span style="font-weight:800;color:var(--white)">Beyond Pixels</span></div><div style="display:flex;gap:24px"><a href="#services" style="color:var(--gray);font-size:.9rem">Services</a><a href="#problems" style="color:var(--gray);font-size:.9rem">Problems</a><a href="#gymos" style="color:var(--gray);font-size:.9rem">Gym OS</a><a href="https://wa.me/917737077479" target="_blank" style="color:var(--gray);font-size:.9rem">Contact</a></div><div class="copy">© 2026 Beyond Pixels. SaaS & Web Solutions. Built for any business.</div></div></footer>
 </body>
 </html>
