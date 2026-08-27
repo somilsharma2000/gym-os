@@ -204,6 +204,7 @@ footer{background:#050A18;padding:60px 0 30px;color:var(--gray);font-size:.9rem}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center;font-size:.85rem}
 
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+@keyframes spin{to{transform:rotate(360deg)}}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
@@ -603,6 +604,7 @@ footer{background:#050A18;padding:60px 0 30px;color:var(--gray);font-size:.9rem}
 Send Demo Request via WhatsApp
 </button>
 <div class="note">You will be redirected to WhatsApp (+91 917737077479) with details pre-filled. We respond within 24 hours.</div>
+        <div id="form-status" style="display:none;margin-top:14px;padding:14px;border-radius:8px;font-size:.9rem;text-align:center;font-weight:600"></div>
 </div>
 </div>
 </section>
@@ -665,6 +667,9 @@ beyondpixells@gmail.com
 <script>
 const dBtn = document.getElementById('d-send');
 const dFields = ['d-name','d-gym','d-city','d-phone'];
+const formStatus = document.getElementById('form-status');
+const WEBHOOK_URL = 'https://base44.com/api/apps/6a700b150c8d8b8e923580a1/functions/receiveLeadWebhook';
+
 function checkDemoReady(){
   const ready = dFields.every(id => document.getElementById(id).value.trim() !== '') && document.getElementById('d-members').value !== '';
   dBtn.disabled = !ready;
@@ -672,7 +677,7 @@ function checkDemoReady(){
 dFields.forEach(id => document.getElementById(id).addEventListener('input', checkDemoReady));
 document.getElementById('d-members').addEventListener('change', checkDemoReady);
 
-dBtn.addEventListener('click', function(e){
+dBtn.addEventListener('click', async function(e){
   e.preventDefault();
   if(dBtn.disabled) return;
   const name = document.getElementById('d-name').value.trim();
@@ -680,9 +685,45 @@ dBtn.addEventListener('click', function(e){
   const city = document.getElementById('d-city').value.trim();
   const phone = document.getElementById('d-phone').value.trim();
   const members = document.getElementById('d-members').value || 'Not specified';
-  const waNumber = '917737077479';
-  const msg = `Gym OS — Demo Request%0A%0A*Name:* ${name}%0A*Gym:* ${gym}%0A*City:* ${city}%0A*Phone:* ${phone}%0A*Members:* ${members}%0A%0AI would like to book a personalized demo of Gym OS.`;
-  window.location.href = `https://wa.me/${waNumber}?text=${msg}`;
+
+  dBtn.disabled = true;
+  dBtn.innerHTML = '<span style="display:inline-block;width:18px;height:18px;border:2px solid rgba(0,0,0,.3);border-top-color:#000;border-radius:50%;animation:spin 1s linear infinite"></span> Submitting...';
+
+  try {
+    // 1. Submit lead to CRM
+    await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        phone: phone,
+        email: '',
+        fitness_goal: 'Demo request for ' + gym + ' (' + members + ' members, ' + city + ')',
+        source: 'website',
+        gym_id: 'gym_oxigen',
+        consent: true
+      })
+    });
+
+    formStatus.style.display = 'block';
+    formStatus.style.background = 'rgba(16,185,129,.15)';
+    formStatus.style.color = '#10B981';
+    formStatus.style.border = '1px solid rgba(16,185,129,.4)';
+    formStatus.textContent = 'Lead captured in CRM. Redirecting to WhatsApp...';
+  } catch(err) {
+    formStatus.style.display = 'block';
+    formStatus.style.background = 'rgba(239,68,68,.15)';
+    formStatus.style.color = '#ef4444';
+    formStatus.style.border = '1px solid rgba(239,68,68,.4)';
+    formStatus.textContent = 'Could not submit to CRM, but redirecting to WhatsApp.';
+  }
+
+  // 2. Redirect to WhatsApp after 1.5s
+  setTimeout(() => {
+    const waNumber = '917737077479';
+    const msg = `Gym OS — Demo Request%0A%0A*Name:* ${name}%0A*Gym:* ${gym}%0A*City:* ${city}%0A*Phone:* ${phone}%0A*Members:* ${members}%0A%0AI would like to book a personalized demo of Gym OS.`;
+    window.location.href = `https://wa.me/${waNumber}?text=${msg}`;
+  }, 1500);
 });
 
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
