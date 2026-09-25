@@ -34,12 +34,18 @@ Client website form (data-gymos-lead)
 gym-os-connect.js v2 ──(API down?)──► WhatsApp fallback + localStorage queue
         │
         ▼
-Vesper: captureGymLead (vesper-923580a1.base44.app)
+Gym osssss → captureGymLead / createLeadWithConsent   ✅ REPOINTED 26 Sep 2026
         │
         ▼
-BEYOND PIXELLS app → Lead entity          ← ⚠ leads land HERE today
-                                          ← target: Gym osssss (published platform)
+Gym osssss → Lead entity (the published platform)
 ```
+Repoint (26 Sep 2026): connect-v2 sites →
+`https://base44.app/api/apps/6a85aadd01bc42f293723858/functions/captureGymLead`;
+Iron Forge HYD + PowerHouse HYD → same app id, `createLeadWithConsent`.
+Vesper captureGymLead and the BEYOND PIXELLS functions are now retired for gym leads.
+Pending: verify end-to-end after the Base44 credit reset (all capture calls return
+HTTP 402 while credits are exhausted), then migrate historical leads from
+BEYOND PIXELLS into Gym osssss.
 
 ## Data Reality (what each data store actually holds)
 
@@ -54,7 +60,7 @@ BEYOND PIXELLS app → Lead entity          ← ⚠ leads land HERE today
 
 **One product, one backend.** The published platform (`Gym osssss` / my-gym-os.base44.app) is the flagship. To finish:
 
-1. Repoint Vesper's `captureGymLead` to write into Gym osssss (editor change, owner action)
+1. ~~Repoint Vesper's `captureGymLead` to write into Gym osssss~~ — done differently and fully: client sites repointed directly to Gym osssss capture functions (26 Sep 2026)
 2. Migrate real leads from BEYOND PIXELLS → Gym osssss (can be done by agent once step 1 is chosen)
 3. Retire/merge GYMOS functions into the flagship (or keep as-is if gym-os-frontend stays a separate client)
 4. Rename "Gym osssss" → "Gym OS" in the editor for credibility
