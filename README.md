@@ -21,6 +21,14 @@ Gym OS is a premium gym management platform by **Beyond Pixels** that combines a
 - 🌐 **Gym OS Landing Page**: [https://somilsharma2000.github.io/gym-os/](https://somilsharma2000.github.io/gym-os/)
 - 🏢 **Beyond Pixels (Parent Company)**: [https://somilsharma2000.github.io/beyond-pixels/](https://somilsharma2000.github.io/beyond-pixels/)
 - 🤝 **Beyond Reach (Partner Portal)**: [https://beyondhub-bqxcyobv.manus.space](https://beyondhub-bqxcyobv.manus.space)
+- 🏋️ **Live Gym OS Platform**: [https://my-gym-os.base44.app](https://my-gym-os.base44.app)
+
+> **This is the flagship repository.** Everything that exists across the Gym OS estate —
+> platform, frontend, client systems, sales kit — is inventoried in
+> [docs/FEATURE_INVENTORY.md](docs/FEATURE_INVENTORY.md), and every backend and data
+> flow is mapped in [docs/BACKEND_MAP.md](docs/BACKEND_MAP.md). Client websites
+> integrate with the platform via [client-kit/gym-os-connect.js](client-kit/gym-os-connect.js) —
+> see [client-kit/CLIENT_SETUP.md](client-kit/CLIENT_SETUP.md) to launch a new gym client.
 
 ### The Beyond Pixels Ecosystem
 
@@ -77,7 +85,18 @@ gym-os/
 ├── README.md                         (this file)
 ├── index.html                        (live landing page — GitHub Pages)
 ├── logo.png                          (Beyond Pixels logo)
+├── client-kit/
+│   ├── gym-os-connect.js              (v2 — canonical client integration script)
+│   └── CLIENT_SETUP.md               (new gym client in ~30 min)
 ├── docs/
+│   ├── FEATURE_INVENTORY.md          (complete inventory — nothing gets lost)
+│   ├── BACKEND_MAP.md                (verified map of all 9 Base44 apps + lead flow)
+│   ├── FEATURE_SPEC.md               (300 features, 32 modules)
+│   ├── ARCHITECTURE.md               (system design, DB schema, API routes)
+│   ├── SAFETY_RULES.md               (48 removed features, safety rules)
+│   ├── EDGE_CASES.md                 (82 edge cases, all fixed)
+│   └── DEVELOPMENT_PHASES.md         (Phase 1/2/3, sprint plan)
+└── calling-kit/
 │   ├── FEATURE_SPEC.md               (300 features, 32 modules)
 │   ├── ARCHITECTURE.md               (system design, DB schema, API routes)
 │   ├── SAFETY_RULES.md               (48 removed features, safety rules)
