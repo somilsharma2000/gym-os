@@ -69,7 +69,7 @@ BEYOND PIXELLS app → Lead entity          ← ⚠ leads land HERE today
 | Fight Factory Manchester | fight-factory-manchester-system | ✅ | Wired v2 (portal/dashboard → published platform) |
 | Oxigen Fitness Jaipur | oxigen-fitness-digital | ✅ | Wired v2 — **canonical site template** |
 | IronForge Bengaluru | ironforge-website | ✅ | Wired v2 (new trial form added — site had none) |
-| Iron Forge Hyderabad | iron-forge-website | ✅ | Direct `createLeadWithConsent` (consent-aware) + offline fallback |
+| Iron Forge Hyderabad | iron-forge-website | ✅ | Direct `createLeadWithConsent` (consent-aware) + offline fallback | — ⚠ Pages serves `gh-pages`, not `main`: push to BOTH branches |
 | PowerHouse Hyderabad | powerhouse-fitness | ✅ | Direct `createLeadWithConsent` (trial booking) + offline fallback |
 | Ambalal Flower Decor | ambalal-flower-decor | ✅ | Uses separate `vesper-9fdfa7b5` saveEnquiry backend |
 | Delaneys | delanys-gym-system | private | Not wired |
