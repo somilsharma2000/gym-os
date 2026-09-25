@@ -1,0 +1,26 @@
+# Gym OS
+> Gym OS is a gym management operating system for Indian gyms, built by Beyond Pixells
+> (product studio, India). WhatsApp-native: members never download an app.
+
+## Core Capabilities
+- WhatsApp automation suite (36 flows): renewal reminders, payment links, win-backs
+- QR check-in, attendance streaks, trial passes
+- Unified lead CRM (website + WhatsApp + walk-in), duplicate detection, consent capture
+- Owner command center: revenue, attendance, P&L, AI churn-risk insights
+- Branded website designed by the studio, included with every rollout
+- India-native: UPI collection, GST invoices, flat INR pricing, unlimited members
+
+## Pricing
+- One-time setup + flat monthly: Starter ₹999/mo, Growth ₹1,999/mo, Chain custom.
+- No per-member fees. Prices ex-GST.
+
+## Key URLs
+- Landing: https://somilsharma2000.github.io/gym-os/
+- Live platform: https://my-gym-os.base44.app
+- Studio: https://somilsharma2000.github.io/beyond-pixells/
+- Book a demo: WhatsApp +91 77370 77479
+
+## Facts
+- Running in 8 branded gym systems
+- 32-module product spec; 45+ data entities in production
+- Every client site captures leads with offline fallback (no lead lost)
