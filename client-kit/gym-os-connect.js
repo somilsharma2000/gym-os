@@ -8,14 +8,14 @@
  * before loading this file.
  *
  * Backend: Vesper Base44 app (captureGymLead)
- * Platform: https://my-gym-os.base44.app  (Gym OS — published app)
+ * Platform: https://github.com/somilsharma2000/gymos (own repo — Vercel deploy pending)
  */
 
 const GymOS = {
   config: {
     apiUrl: 'https://vesper-923580a1.base44.app/functions/captureGymLead',
-    portalUrl: 'https://my-gym-os.base44.app',
-    dashboardUrl: 'https://my-gym-os.base44.app',
+    portalUrl: 'https://somilsharma2000.github.io/gymos/demo/',
+    dashboardUrl: 'https://somilsharma2000.github.io/gymos/demo/',
     gymName: 'Gym',
     whatsappNumber: '',
     isDemo: false,
