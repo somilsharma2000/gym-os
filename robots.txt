@@ -1,3 +1,4 @@
+# robots.txt — Gym OS (Beyond Pixells)
 User-agent: *
 Allow: /
 User-agent: GPTBot

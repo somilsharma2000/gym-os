@@ -1,26 +1,14 @@
 # Gym OS
-> Gym OS is a gym management operating system for Indian gyms, built by Beyond Pixells
-> (product studio, India). WhatsApp-native: members never download an app.
+> Complete gym management operating system for Indian gyms: WhatsApp automation, QR check-in, lead CRM, UPI collection, owner dashboard, branded website included. Built by Beyond Pixells, a product studio in India that
+> builds sector-specific operating systems for local businesses. Flat monthly pricing, unlimited members.
 
-## Core Capabilities
-- WhatsApp automation suite (36 flows): renewal reminders, payment links, win-backs
-- QR check-in, attendance streaks, trial passes
-- Unified lead CRM (website + WhatsApp + walk-in), duplicate detection, consent capture
-- Owner command center: revenue, attendance, P&L, AI churn-risk insights
-- Branded website designed by the studio, included with every rollout
-- India-native: UPI collection, GST invoices, flat INR pricing, unlimited members
-
-## Pricing
-- One-time setup + flat monthly: Starter ₹999/mo, Growth ₹1,999/mo, Chain custom.
-- No per-member fees. Prices ex-GST.
-
-## Key URLs
-- Landing: https://somilsharma2000.github.io/gym-os/
-- Live platform: https://my-gym-os.base44.app
-- Studio: https://somilsharma2000.github.io/beyond-pixells/
-- Book a demo: WhatsApp +91 77370 77479
+## Links
+- Landing page: https://somilsharma2000.github.io/gym-os/
+- Studio / other products: https://somilsharma2000.github.io/beyond-pixells/
+- Blog (guides for local businesses): https://somilsharma2000.github.io/beyond-pixells/blog/
+- WhatsApp: https://wa.me/917737077479
 
 ## Facts
-- Running in 8 branded gym systems
-- 32-module product spec; 45+ data entities in production
-- Every client site captures leads with offline fallback (no lead lost)
+- India-native: WhatsApp-first automation, UPI payments, flat INR pricing
+- No per-member fees; one-time setup + flat monthly subscription
+- Every rollout includes a branded website, member/patient portal and owner dashboard
