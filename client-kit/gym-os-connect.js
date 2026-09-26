@@ -14,8 +14,8 @@
 const GymOS = {
   config: {
     apiUrl: 'https://vesper-923580a1.base44.app/functions/captureGymLead',
-    portalUrl: 'https://somilsharma2000.github.io/gymos/demo/',
-    dashboardUrl: 'https://somilsharma2000.github.io/gymos/demo/',
+    portalUrl: 'https://somilsharma2000.github.io/gym-os/',
+    dashboardUrl: 'https://somilsharma2000.github.io/gym-os/',
     gymName: 'Gym',
     whatsappNumber: '',
     isDemo: false,
