@@ -309,6 +309,28 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
 .sticky-cta .btn{padding:11px 18px;font-size:.85rem;margin:0}
 @media(max-width:760px){.sticky-cta{display:flex}}
 
+/* ---- about section (added 27 Sep) ---- */
+.about-lead{max-width:760px;margin:14px auto 0;color:#B6C2D6;font-size:1.02rem;line-height:1.65}
+.about-grid{grid-template-columns:repeat(4,1fr)}
+.about-grid .sec-card b{font-size:.98rem}
+.about-grid .sec-card p{font-size:.85rem;line-height:1.6}
+.about-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.about-strip>div{background:linear-gradient(140deg,#0d2a5e33,#0D1230);border:1px solid #272C49;border-radius:14px;padding:18px 20px}
+.about-strip b{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#7AA5FF;margin-bottom:6px}
+.about-strip span{font-size:.85rem;color:#B6C2D6;line-height:1.55}
+@media(max-width:960px){.about-grid{grid-template-columns:1fr 1fr}.about-strip{grid-template-columns:1fr}}
+
+/* ---- about section (added 27 Sep) ---- */
+.about-lead{max-width:760px;margin:14px auto 0;color:#B6C2D6;font-size:1.02rem;line-height:1.65}
+.about-grid{grid-template-columns:repeat(4,1fr)}
+.about-grid .sec-card b{font-size:.98rem}
+.about-grid .sec-card p{font-size:.85rem;line-height:1.6}
+.about-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.about-strip>div{background:linear-gradient(140deg,#0d2a5e33,#0D1230);border:1px solid #272C49;border-radius:14px;padding:18px 20px}
+.about-strip b{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#7AA5FF;margin-bottom:6px}
+.about-strip span{font-size:.85rem;color:#B6C2D6;line-height:1.55}
+@media(max-width:960px){.about-grid{grid-template-columns:1fr 1fr}.about-strip{grid-template-columns:1fr}}
+
 /* ---- gallery + kit + partners (added 27 Sep) ---- */
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
 .gal figure{margin:0;background:#0D1230;border:1px solid #272C49;border-radius:14px;overflow:hidden}
@@ -360,6 +382,7 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
   <div class="container">
     <a class="brand" href="#top"><img src="logo.png" alt="Gym OS">Gym OS <span style="font-size:.65rem;color:var(--dim);border:1px solid var(--stroke);padding:2px 8px;border-radius:100px;font-weight:600">by Beyond Pixells</span></a>
     <ul>
+      <li><a href="#about">About</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#security">Security</a></li>
       <li><a href="#showcase">See it</a></li>
@@ -376,7 +399,7 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
 <header class="hero" id="top">
   <div class="ov-canvas" aria-hidden="true"></div>
   <div class="container">
-    <div class="pill bp-hero-step" style="--bp-hero-delay:0ms"><span class="dot"></span>Live in production &middot; running in 8 gym systems across India</div>
+    <div class="pill bp-hero-step" style="--bp-hero-delay:0ms"><span class="dot"></span>Live demo open right now &middot; no signup needed</div>
     <h1 class="bp-hero-step" style="--bp-hero-delay:100ms">Stop chasing fees. Start <span class="hl">running your gym.</span></h1>
     <p class="bp-hero-step" style="--bp-hero-delay:220ms">Gym OS is the complete operating system for Indian gyms: automated WhatsApp renewal reminders, QR check-in, lead CRM, UPI fee collection, an owner dashboard — and a branded website included. Your members never download an app.</p>
     <div class="ctas bp-hero-step" style="--bp-hero-delay:340ms">
@@ -531,6 +554,29 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
       <div class="sc-chip c3">&#127919; Every lead followed up</div>
     </div>
     <p class="sc-cap">The Gym OS owner dashboard. Data shown is sample data.</p>
+  </div>
+</section>
+
+
+<!-- ======= ABOUT · what gym os is, in plain words ======= -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="kicker">About Gym OS</span>
+      <h2>One system instead of a register, a diary and four WhatsApp groups.</h2>
+      <p class="about-lead">Gym OS is a gym management platform built in India for Indian gyms. It is not a member app people have to download, and it is not an enterprise suite priced for chains. It is the four things a gym actually runs on — finally speaking to each other.</p>
+    </div>
+    <div class="sec-grid about-grid">
+      <div class="sec-card"><b>🌐 Your gym's website</b><p>Branded, SEO-ready, with every enquiry captured as a lead. Designed by Beyond Pixells — not a template subdomain.</p></div>
+      <div class="sec-card"><b>👥 The member system</b><p>Memberships, QR check-in, batches and expiry — the front desk runs on it, and expired members get caught at the door.</p></div>
+      <div class="sec-card"><b>💬 The WhatsApp engine</b><p>Renewal reminders with UPI links, welcomes, win-backs and birthday offers — sent automatically, before the month ends.</p></div>
+      <div class="sec-card"><b>📊 The owner dashboard</b><p>Collections, renewals, attendance and leads — live on your phone. You stop calling the desk to ask how today went.</p></div>
+    </div>
+    <div class="about-strip">
+      <div><b>Built for</b><span>Single-gym owners and small chains who manage from their phone, in rupees, on UPI.</span></div>
+      <div><b>Set up in</b><span>24 hours — we move your register, train your staff, and hand you the login.</span></div>
+      <div><b>Built by</b><span>Beyond Pixells, an Indian product studio that builds operating systems for local businesses.</span></div>
+    </div>
   </div>
 </section>
 
