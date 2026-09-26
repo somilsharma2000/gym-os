@@ -19,11 +19,13 @@
 <link rel="canonical" href="https://somilsharma2000.github.io/gym-os/">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+/* v7.1 APP PARITY (26 Sep 2026): tokens mirror the live Gym OS app
+   (my-gym-os.base44.app) — navy canvas, slate strokes, royal blue accent. */
 :root{
-  --bg:#06080D;--bg-soft:#0B0E15;--card:#10141E;--stroke-soft:rgba(139,171,250,.12);--stroke:rgba(139,171,250,.22);
-  --grad:linear-gradient(135deg,#5C89F6 0%,#285CD9 55%,#142F70 100%);
+  --bg:#0A0F1E;--bg-soft:#0F1526;--card:#111827;--stroke-soft:rgba(148,163,184,.14);--stroke:rgba(148,163,184,.26);
+  --grad:linear-gradient(135deg,#3B82F6 0%,#2563EB 55%,#1D4ED8 100%);
   --crimson:#8BABFA;--amber:#B5CAFD;--cyan:#67E8F9;--green:#34D399;
-  --text:#F2F5FB;--muted:#A6B0C7;--dim:#68738F;
+  --text:#F2F5FB;--muted:#9CA3AF;--dim:#6B7280;
   --gloss:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 45%);
   --shadow-sm:0 12px 34px rgba(0,0,0,.4);
 }
@@ -196,35 +198,63 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
      only a whisper of edge darkening for the section transition. */
   radial-gradient(120% 90% at 50% 8%,rgba(3,4,7,0) 55%,rgba(3,4,7,.28) 92%),
   linear-gradient(180deg,rgba(3,4,7,.12) 0%,rgba(3,4,7,0) 22%,rgba(3,4,7,0) 90%,rgba(3,4,7,.55) 100%)}
+.hero .ov-canvas{background:
+    radial-gradient(58% 46% at 50% -6%, rgba(37,99,235,.30), transparent 66%),
+    radial-gradient(30% 26% at 88% 22%, rgba(37,99,235,.10), transparent 68%),
+    radial-gradient(38% 32% at 6% 34%, rgba(30,58,138,.22), transparent 72%),
+    #0A0F1E}
 .hero .container{position:relative;z-index:2}
 /* ============ FRONTEND SHOWCASE ============ */
 .showcase{position:relative;padding:96px 0 40px}
 .sc-stage{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:0;min-height:540px;perspective:1200px}
 .sc-laptop{width:min(760px,92%);position:relative;z-index:1;transform:rotateX(4deg);filter:drop-shadow(0 40px 60px rgba(0,0,0,.6))}
-.sc-screen{background:linear-gradient(165deg,#FBFCFE 0%,#F2F4F8 55%,#ECEEF4 100%);border:1px solid rgba(15,18,30,.10);border-radius:16px 16px 6px 6px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5),0 4px 16px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.9)}
-.sc-topbar{display:flex;align-items:center;gap:10px;padding:11px 16px;background:rgba(255,255,255,.65);backdrop-filter:blur(8px);border-bottom:1px solid rgba(15,18,30,.07);font:600 .78rem/1 'Space Grotesk';letter-spacing:.04em;color:#0B0D14}
-.sc-logo{width:14px;height:14px;border-radius:5px;background:linear-gradient(135deg,#3A6EED,#5584F7);box-shadow:0 2px 6px rgba(58,110,237,.35)}
-.sc-live{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:.68rem;color:#16A34A}
-.sc-live i{width:6px;height:6px;border-radius:50%;background:#16A34A;animation:scPulse 1.6s infinite}
-.sc-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:14px 16px 6px}
-.sc-kpi{background:#FFFFFF;border:1px solid rgba(15,18,30,.06);border-radius:12px;padding:10px 12px;box-shadow:0 1px 2px rgba(15,18,30,.05),0 4px 14px rgba(15,18,30,.06)}
-.sc-kpi.spot{background:linear-gradient(150deg,#14161F,#0B0D14);border-color:rgba(255,255,255,.08);box-shadow:0 8px 24px rgba(11,13,20,.35),inset 0 1px 0 rgba(255,255,255,.10)}
-.sc-kpi span{display:block;font-size:.64rem;color:#6B7280;letter-spacing:.03em;text-transform:uppercase}
-.sc-kpi.spot span{color:#9CA3AF}
-.sc-kpi b{display:block;font:700 1.06rem/1.2 'Space Grotesk';margin:2px 0;color:#0B0D14}
-.sc-kpi.spot b{background:linear-gradient(135deg,#FFFFFF,#E9EFFE);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sc-kpi em{font-style:normal;font-size:.62rem;color:#16A34A}
-.sc-kpi.spot em{color:#4ADE80}.sc-cols{display:grid;grid-template-columns:1.5fr 1fr;gap:10px;padding:8px 16px 16px}
-.sc-feed-h{font:600 .66rem/1 'Space Grotesk';letter-spacing:.06em;text-transform:uppercase;color:#6B7280;padding:6px 2px 8px}
-.sc-feed-items .sc-item{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;border-radius:10px;margin-bottom:5px;background:#FFFFFF;border:1px solid rgba(15,18,30,.05);box-shadow:0 1px 2px rgba(15,18,30,.04),0 3px 10px rgba(15,18,30,.05);animation:scItemIn .5s both}
+.sc-screen{background:#0b1022;border:1px solid rgba(255,255,255,.08);border-radius:16px 16px 6px 6px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(37,99,235,.16),inset 0 1px 0 rgba(255,255,255,.06);display:grid;grid-template-columns:122px 1fr;text-align:left}
+.sc-side{background:#111827;border-right:1px solid #1f2937;padding:12px 10px;display:flex;flex-direction:column;gap:2px}
+.sc-brand{font:700 .82rem/1.1 'Space Grotesk';color:#fff;padding:2px 6px 12px;display:flex;flex-direction:column;gap:1px}
+.sc-brand small{font:500 .55rem/1 'Plus Jakarta Sans';color:#6b7280;letter-spacing:.01em}
+.sc-nav{font:600 .66rem/1 'Plus Jakarta Sans';color:#9ca3af;padding:7px 9px;border-radius:8px;display:flex;align-items:center;gap:7px}
+.sc-nav i{width:5px;height:5px;border-radius:2px;background:#374151;flex:none}
+.sc-nav.on{background:#2563eb;color:#fff}
+.sc-nav.on i{background:#fff}
+.sc-view{margin-top:auto;font:600 .64rem/1 'Plus Jakarta Sans';color:#60a5fa;padding:10px 6px 2px;border-top:1px solid #1f2937}
+.sc-main{display:flex;flex-direction:column;min-width:0}
+.sc-appbar{display:flex;align-items:center;gap:10px;padding:9px 14px;background:#0f1526;border-bottom:1px solid #1f2937;color:#e5e7eb}
+.sc-branch{display:flex;align-items:center;gap:6px;background:#111827;border:1px solid #1f2937;border-radius:7px;padding:5px 9px;font:600 .68rem/1 'Space Grotesk'}
+.sc-appbar .r{margin-left:auto;display:flex;align-items:center;gap:10px}
+.sc-search{width:14px;height:14px;border:1.5px solid #4b5563;border-radius:50%;position:relative;flex:none}
+.sc-search::after{content:"";position:absolute;width:5px;height:1.5px;background:#4b5563;transform:rotate(45deg);bottom:-2px;right:-3px}
+.sc-bell{width:13px;height:13px;background:#4b5563;border-radius:50% 50% 18% 18%;position:relative;flex:none}
+.sc-bell::after{content:"9+";position:absolute;top:-9px;right:-11px;background:#ef4444;color:#fff;font:700 .5rem/1 'Space Grotesk';padding:2px 3px;border-radius:99px}
+.sc-ava{width:20px;height:20px;border-radius:50%;background:#2563eb;color:#fff;font:700 .55rem/20px 'Space Grotesk';text-align:center;flex:none}
+.sc-content{padding:13px 15px 15px;min-width:0}
+.sc-dash{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.sc-dash h4{font:700 1.04rem/1 'Space Grotesk';color:#fff}
+.sc-dash p{font:500 .64rem/1.4 'Plus Jakarta Sans';color:#6b7280;margin-top:3px}
+.sc-btns{display:flex;gap:7px;flex-wrap:wrap}
+.sc-btn{font:700 .62rem/1 'Plus Jakarta Sans';padding:7px 10px;border-radius:8px;white-space:nowrap}
+.sc-btn.pri{background:#2563eb;color:#fff}
+.sc-btn.sec{border:1px solid #1f2937;color:#e5e7eb;background:#111827}
+.sc-tabs{display:flex;gap:6px;margin:11px 0 0}
+.sc-tab{font:600 .62rem/1 'Plus Jakarta Sans';color:#6b7280;padding:6px 10px;border-radius:8px;border:1px solid transparent}
+.sc-tab.on{color:#fff;border-color:#2563eb;background:rgba(37,99,235,.12)}
+.sc-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 0;padding:0}
+.sc-kpi{background:#111827;border:1px solid #1f2937;border-radius:11px;padding:10px 12px;box-shadow:none}
+.sc-kpi.money{background:linear-gradient(150deg,rgba(37,99,235,.4),rgba(37,99,235,.08));border-color:rgba(37,99,235,.5)}
+.sc-kpi span{display:block;font:600 .58rem/1 'Plus Jakarta Sans';color:#6b7280;letter-spacing:.04em;text-transform:uppercase}
+.sc-kpi b{display:block;font:700 1rem/1.2 'Space Grotesk';color:#fff;margin:4px 0 2px}
+.sc-kpi.money b{background:linear-gradient(135deg,#FFFFFF,#BFDBFE);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sc-kpi em{font-style:normal;font:600 .58rem/1 'Plus Jakarta Sans';color:#4ade80}
+.sc-cols{display:grid;grid-template-columns:1.5fr 1fr;gap:10px;padding:12px 0 0}
+.sc-feed-h{font:600 .62rem/1 'Space Grotesk';letter-spacing:.06em;text-transform:uppercase;color:#6b7280;padding:2px 2px 8px}
+.sc-feed-items .sc-item{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;border-radius:10px;margin-bottom:5px;background:#111827;border:1px solid #1f2937;animation:scItemIn .5s both}
 .sc-item i{width:8px;height:8px;border-radius:50%;margin-top:5px;flex:none}
-.sc-item i.ok{background:#22C55E;box-shadow:0 0 6px rgba(34,197,94,.5)}.sc-item i.wa{background:#3A6EED;box-shadow:0 0 6px rgba(58,110,237,.45)}.sc-item i.ai{background:#5584F7;box-shadow:0 0 6px rgba(85,132,247,.45)}
-.sc-item b{display:block;font-size:.76rem;color:#0B0D14}
-.sc-item span{font-size:.68rem;color:#6B7280}
+.sc-item i.ok{background:#22C55E;box-shadow:0 0 6px rgba(34,197,94,.5)}.sc-item i.wa{background:#2563eb;box-shadow:0 0 6px rgba(37,99,235,.5)}.sc-item i.ai{background:#60a5fa;box-shadow:0 0 6px rgba(96,165,250,.45)}
+.sc-item b{display:block;font-size:.76rem;color:#f3f4f6}
+.sc-item span{font-size:.68rem;color:#6b7280}
 .sc-bars{display:flex;align-items:flex-end;gap:8px;height:132px;padding:8px 4px 0}
-.sc-bars div{flex:1;background:linear-gradient(180deg,#5584F7,#285CD9);border-radius:5px 5px 3px 3px;height:var(--h);animation:scBar 2.4s ease-in-out infinite alternate;box-shadow:0 3px 10px rgba(58,110,237,.3)}
-.sc-bars span{display:block;text-align:center;font-size:.62rem;color:#6B7280;margin-top:6px}
-.sc-note{font-size:.68rem;color:#3A6EED;padding:8px 2px 0}
+.sc-bars div{flex:1;background:linear-gradient(180deg,#3b82f6,#1d4ed8);border-radius:5px 5px 3px 3px;height:var(--h);animation:scBar 2.4s ease-in-out infinite alternate;box-shadow:0 3px 10px rgba(37,99,235,.3)}
+.sc-bars span{display:block;text-align:center;font-size:.62rem;color:#6b7280;margin-top:6px}
+.sc-note{font-size:.68rem;color:#60a5fa;padding:8px 2px 0}
 .sc-base{height:14px;background:linear-gradient(180deg,#15171D,#0B0C12);border-radius:0 0 14px 14px;border:1px solid rgba(255,255,255,.05);border-top:none}.sc-base::after{content:"";display:block;width:18%;height:4px;background:rgba(255,255,255,.08);border-radius:0 0 8px 8px;margin:0 auto}
 .sc-phone{width:250px;z-index:2;position:relative;flex:none;background:#0B0C12;border:1px solid rgba(181,202,253,.22);border-radius:30px;padding:12px 10px 10px;margin-left:-56px;margin-bottom:-14px;transform:rotate(-2deg);box-shadow:0 0 50px rgba(58,110,237,.25),0 30px 50px rgba(0,0,0,.65);animation:scFloat 5s ease-in-out infinite}
 .sc-notch{width:78px;height:5px;border-radius:5px;background:rgba(255,255,255,.12);margin:0 auto 8px}
@@ -354,37 +384,61 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
       <!-- laptop -->
       <div class="sc-laptop">
         <div class="sc-screen">
-          <div class="sc-topbar"><span class="sc-logo"></span>Owner Command Center<span class="sc-live"><i></i>Live</span></div>
-          <div class="sc-kpis">
-            <div class="sc-kpi spot"><span>Collected today</span><b>&#8377;42,300</b><em>+12% vs yesterday</em></div>
-            <div class="sc-kpi"><span>Active members</span><b>486</b><em>9 renewals this hour</em></div>
-            <div class="sc-kpi"><span>On the floor</span><b>84</b><em>peak in 40 min</em></div>
-            <div class="sc-kpi"><span>Auto-renewals</span><b>37</b><em>this week, zero calls</em></div>
-          </div>
-          <div class="sc-cols">
-            <div class="sc-feed">
-              <div class="sc-feed-h">Automation feed</div>
-              <div class="sc-feed-items">
-                <div class="sc-item"><i class="ok"></i><div><b>Payment received — Priya S.</b><span>&#8377;18,500 &middot; Annual Gold &middot; UPI</span></div></div>
-                <div class="sc-item"><i class="wa"></i><div><b>Renewal link sent — Rahul M.</b><span>3 days before expiry &middot; WhatsApp</span></div></div>
-                <div class="sc-item"><i class="ok"></i><div><b>QR check-in — Amit J.</b><span>Valid &middot; Day 12 streak</span></div></div>
-                <div class="sc-item"><i class="wa"></i><div><b>New lead — Kavya R.</b><span>"Trial for cardio?" &middot; follow-up set 6 PM</span></div></div>
-                <div class="sc-item"><i class="ok"></i><div><b>Payment received — Sanjay D.</b><span>&#8377;3,499 &middot; 3-month plan &middot; UPI</span></div></div>
-                <div class="sc-item"><i class="ai"></i><div><b>AI insight</b><span>4 members at churn risk &middot; win-back queued</span></div></div>
-              </div>
+          <aside class="sc-side">
+            <div class="sc-brand">Gym OS<small>by Beyond Pixells</small></div>
+            <div class="sc-nav on"><i></i>Dashboard</div>
+            <div class="sc-nav"><i></i>Gym OS Assistant</div>
+            <div class="sc-nav"><i></i>Members</div>
+            <div class="sc-nav"><i></i>Leads</div>
+            <div class="sc-nav"><i></i>Check-in</div>
+            <div class="sc-nav"><i></i>Passes</div>
+            <div class="sc-nav"><i></i>Payments</div>
+            <div class="sc-nav"><i></i>Plans</div>
+            <div class="sc-nav"><i></i>Classes</div>
+            <div class="sc-view">View website &#8594;</div>
+          </aside>
+          <div class="sc-main">
+            <div class="sc-appbar">
+              <span class="sc-branch">02 &#9662;</span>
+              <div class="r"><span class="sc-search"></span><span class="sc-bell"></span><span class="sc-ava">SS</span></div>
             </div>
-            <div class="sc-chart">
-              <div class="sc-feed-h">Collections this week</div>
-              <div class="sc-bars">
-                <div style="--h:38%"><span>M</span></div>
-                <div style="--h:52%"><span>T</span></div>
-                <div style="--h:47%"><span>W</span></div>
-                <div style="--h:64%"><span>T</span></div>
-                <div style="--h:58%"><span>F</span></div>
-                <div style="--h:81%"><span>S</span></div>
-                <div style="--h:29%;--h2:45%"><span>S</span></div>
+            <div class="sc-content">
+              <div class="sc-dash">
+                <div><h4>Dashboard</h4><p>Overview of your gym's performance today</p></div>
+                <div class="sc-btns"><span class="sc-btn pri">+ Add Member</span><span class="sc-btn sec">+ Log Payment</span><span class="sc-btn sec">+ Add Lead</span></div>
               </div>
-              <div class="sc-note">Saturday peaks without a single reminder call</div>
+              <div class="sc-tabs"><span class="sc-tab on">Overview</span><span class="sc-tab">Staff Performance</span><span class="sc-tab">Reports</span></div>
+              <div class="sc-kpis">
+                <div class="sc-kpi"><span>Active members</span><b>486</b><em>+12 this week</em></div>
+                <div class="sc-kpi money"><span>Revenue this month</span><b>&#8377;1,84,500</b><em>+18% vs last month</em></div>
+                <div class="sc-kpi"><span>Leads this month</span><b>23</b><em>7 joined this week</em></div>
+                <div class="sc-kpi"><span>Check-ins today</span><b>84</b><em>peak in 40 min</em></div>
+              </div>
+              <div class="sc-cols">
+                <div class="sc-feed">
+                  <div class="sc-feed-h">Automation feed</div>
+                  <div class="sc-feed-items">
+                    <div class="sc-item"><i class="ok"></i><div><b>Payment received — Priya S.</b><span>&#8377;18,500 &middot; Annual Gold &middot; UPI</span></div></div>
+                    <div class="sc-item"><i class="wa"></i><div><b>Renewal link sent — Rahul M.</b><span>3 days before expiry &middot; WhatsApp</span></div></div>
+                    <div class="sc-item"><i class="ok"></i><div><b>QR check-in — Amit J.</b><span>Valid &middot; Day 12 streak</span></div></div>
+                    <div class="sc-item"><i class="wa"></i><div><b>New lead — Kavya R.</b><span>"Trial for cardio?" &middot; follow-up set 6 PM</span></div></div>
+                    <div class="sc-item"><i class="ai"></i><div><b>AI insight</b><span>4 members at churn risk &middot; win-back queued</span></div></div>
+                  </div>
+                </div>
+                <div class="sc-chart">
+                  <div class="sc-feed-h">Collections this week</div>
+                  <div class="sc-bars">
+                    <div style="--h:38%"><span>M</span></div>
+                    <div style="--h:52%"><span>T</span></div>
+                    <div style="--h:47%"><span>W</span></div>
+                    <div style="--h:64%"><span>T</span></div>
+                    <div style="--h:58%"><span>F</span></div>
+                    <div style="--h:81%"><span>S</span></div>
+                    <div style="--h:29%;--h2:45%"><span>S</span></div>
+                  </div>
+                  <div class="sc-note">Saturday peaks without a single reminder call</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -408,7 +462,7 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
       <div class="sc-chip c2">&#128241; Members need zero new apps</div>
       <div class="sc-chip c3">&#127919; Every lead followed up</div>
     </div>
-    <p class="sc-cap">Product preview — real flows from the live platform. Data shown is sample data.</p>
+    <p class="sc-cap">The live Gym OS owner dashboard (my-gym-os.base44.app). Data shown is sample data.</p>
   </div>
 </section>
 
