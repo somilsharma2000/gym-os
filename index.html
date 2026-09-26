@@ -190,8 +190,11 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
 
 .hero{position:relative}
 .hero .ov-canvas::after{background:
-  radial-gradient(120% 90% at 50% 8%,rgba(6,6,13,0) 30%,rgba(6,6,13,.5) 78%),
-  linear-gradient(180deg,rgba(6,6,13,.3) 0%,rgba(6,6,13,0) 34%,rgba(6,6,13,0) 62%,rgba(6,6,13,.95) 100%)}
+  /* v5.4 reference-match (26 Sep): founder reference glows evenly — old .5/.95
+     veils crushed it to near-black. White-on-violet is ~11:1, no backing needed;
+     only a whisper of edge darkening for the section transition. */
+  radial-gradient(120% 90% at 50% 8%,rgba(3,3,7,0) 55%,rgba(3,3,7,.28) 92%),
+  linear-gradient(180deg,rgba(3,3,7,.12) 0%,rgba(3,3,7,0) 22%,rgba(3,3,7,0) 90%,rgba(3,3,7,.55) 100%)}
 .hero .container{position:relative;z-index:2}
 /* ============ FRONTEND SHOWCASE ============ */
 .showcase{position:relative;padding:96px 0 40px}
