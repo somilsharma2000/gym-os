@@ -294,13 +294,36 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
 .gform .gerr{grid-column:1/-1;color:#F87171;font-size:.8rem;display:none}
 .gform .gok{grid-column:1/-1;color:#21C45D;font-weight:700;font-size:.95rem;text-align:center}
 .gform .gok a{color:#4D94FF}
+
+/* showcase mockup: collapse sidebar to horizontal strip on mobile (was overflowing 390px) */
+@media(max-width:760px){
+  .sc-screen{grid-template-columns:1fr}
+  .sc-side{flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid #272C49;align-items:center;padding:8px 10px}
+  .sc-side .sc-brand{display:none}
+  .sc-side a{white-space:nowrap;padding:6px 9px}
+  .sc-side .sc-view{display:none}
+  .sc-laptop{width:96%}
+}
 @media(max-width:760px){.gform{grid-template-columns:1fr}}
+/* sticky mobile CTA — appears after hero, drives demo booking */
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;gap:10px;align-items:center;justify-content:space-between;background:rgba(10,14,41,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid #272C49;border-radius:16px;padding:12px 14px;box-shadow:0 18px 50px rgba(0,0,0,.55);transform:translateY(120%);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta .sc-t{font:600 .8rem/1.25 'Plus Jakarta Sans';color:#F1F5F9}
+.sticky-cta .sc-t small{display:block;color:#94A3B8;font-size:.72rem;margin-top:2px}
+.sticky-cta a{flex-shrink:0}
+.sticky-cta .btn{padding:11px 18px;font-size:.85rem;margin:0}
+@media(max-width:760px){.sticky-cta{display:flex}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "@id": "https://somilsharma2000.github.io/gym-os/#app", "name": "Gym OS", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Complete gym management operating system for Indian gyms: WhatsApp automation, QR check-in, lead CRM, UPI fee collection, owner dashboard and a branded website included.", "url": "https://somilsharma2000.github.io/gym-os/", "author": {"@type": "Organization", "name": "Beyond Pixells", "url": "https://somilsharma2000.github.io/beyond-pixells/"}, "offers": [{"@type": "Offer", "name": "Starter", "price": "999", "priceCurrency": "INR", "description": "₹999/month + setup"}, {"@type": "Offer", "name": "Growth", "price": "1999", "priceCurrency": "INR", "description": "₹1,999/month + setup"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "My staff isn't technical.", "acceptedAnswer": {"@type": "Answer", "text": "Gym OS runs where your staff already lives: WhatsApp and a browser. Check-in is one scan. We train your front desk in one call — and we do the data entry for you."}}, {"@type": "Question", "name": "I already use a register and Excel.", "acceptedAnswer": {"@type": "Answer", "text": "Send us a photo of your register and we'll transfer your entire member base into Gym OS within 24 hours, or you pay nothing for setup."}}, {"@type": "Question", "name": "Is there a cheaper option?", "acceptedAnswer": {"@type": "Answer", "text": "Cheap offline software doesn't send WhatsApp reminders or collect UPI. It costs you ₹50,000+ a year in lost renewals. Gym OS pays for itself by saving 2 members a month."}}, {"@type": "Question", "name": "What about my data?", "acceptedAnswer": {"@type": "Answer", "text": "Your data is yours. Every record is exportable anytime, and member consent is captured at every lead form per India's DPDP Act."}}, {"@type": "Question", "name": "Will my members actually use it?", "acceptedAnswer": {"@type": "Answer", "text": "They don't have to adopt anything — no app downloads. Reminders, QR passes and plans arrive on WhatsApp."}}, {"@type": "Question", "name": "How fast is setup?", "acceptedAnswer": {"@type": "Answer", "text": "Setup takes about 24 hours: branded website, data transfer, staff training and your owner dashboard."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beyond Pixells", "item": "https://somilsharma2000.github.io/beyond-pixells/"}, {"@type": "ListItem", "position": 2, "name": "Gym OS", "item": "https://somilsharma2000.github.io/gym-os/"}]}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "My staff isn't technical.", "acceptedAnswer": {"@type": "Answer", "text": "Gym OS runs where your staff already lives: WhatsApp and a browser. Check-in is one scan. We train your front desk in one call — and we do the data entry for you."}}, {"@type": "Question", "name": "I already use a register and Excel.", "acceptedAnswer": {"@type": "Answer", "text": "Perfect — send us a photo of your register and we'll transfer your entire member base into Gym OS within 24 hours, or you pay nothing for setup. Keep the register as backup; you'll stop using it on your own."}}, {"@type": "Question", "name": "There's cheaper software out there.", "acceptedAnswer": {"@type": "Answer", "text": "That ₹2,000 'lifetime' software doesn't send WhatsApp reminders, can't collect UPI, and has no support. It costs you ₹50,000+ a year in lost renewals. Gym OS pays for itself by saving 2 members a month."}}, {"@type": "Question", "name": "What about my data?", "acceptedAnswer": {"@type": "Answer", "text": "Your data is yours. Every record is exportable anytime, and your members' details stay in your gym's system — with consent captured at every lead form, per India's DPDP Act."}}, {"@type": "Question", "name": "Will my members actually use it?", "acceptedAnswer": {"@type": "Answer", "text": "They don't have to 'adopt' anything. No app downloads. Reminders, QR passes, receipts and plans arrive on WhatsApp — which they check 50 times a day already."}}, {"@type": "Question", "name": "What if I need something custom?", "acceptedAnswer": {"@type": "Answer", "text": "We're a product studio, not a reseller. Need a custom report, a festival campaign flow, or an integration? We build it — and the best requests become features for every gym on Gym OS."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beyond Pixells", "item": "https://somilsharma2000.github.io/beyond-pixells/"}, {"@type": "ListItem", "position": 2, "name": "Gym OS", "item": "https://somilsharma2000.github.io/gym-os/"}]}</script>
 </head>
 <body>
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sc-t">Gym OS free demo<small>See your gym running live — pay nothing.</small></div>
+  <a class="btn btn-primary" href="#demo">Book demo →</a>
+</div>
+
 <div class="ov-grain" aria-hidden="true"></div>
 <div class="bp-scroll-progress-bar"></div>
 
@@ -725,11 +748,18 @@ footer{padding:60px 0 44px;border-top:1px solid var(--stroke-soft);background:#0
   });
 })();
 </script>
-<div class="bp-mobile-cta" role="complementary" aria-label="Book a demo">
-  <div class="bp-mobile-cta-in">
-    <div class="bp-mct-copy"><b>Book a free Gym OS demo</b><span>WhatsApp · no card required</span></div>
-    <a class="bp-mct-btn" href="https://wa.me/917737077479?text=Hi!%20I%20run%20a%20gym%20and%20want%20a%20free%20Gym%20OS%20demo.">Chat now</a>
-  </div>
-</div>
+<script>
+(function(){
+  var bar=document.getElementById('sticky-cta');
+  if(!bar)return;
+  var shown=false;
+  window.addEventListener('scroll',function(){
+    var past=window.scrollY>520;
+    var atForm=document.querySelector('#demo').getBoundingClientRect().top<window.innerHeight*0.5;
+    var should=past&&!atForm;
+    if(should!==shown){shown=should;bar.classList.toggle('show',should);}
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
