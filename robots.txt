@@ -1,7 +1,2 @@
-User-Agent: *
-Allow: /
-Disallow: /dashboard
-Disallow: /login
-Disallow: /api
-
-Sitemap: https://gymos.in/sitemap.xml
+User-agent: *
+Disallow: /
