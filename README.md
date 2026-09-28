@@ -1,1 +1,1 @@
-# Gym OS — marketing mirror (auto-deployed from gym-os-app)
+# Gym OS — one-link site (marketing + console demo), auto-deployed from gym-os-app
