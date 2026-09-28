@@ -1,15 +1,7 @@
-# robots.txt — Gym OS (Beyond Pixells)
-User-agent: *
+User-Agent: *
 Allow: /
-User-agent: GPTBot
-Allow: /
-User-agent: OAI-SearchBot
-Allow: /
-User-agent: ClaudeBot
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: Google-Extended
-Allow: /
+Disallow: /dashboard
+Disallow: /login
+Disallow: /api
 
-Sitemap: https://somilsharma2000.github.io/gym-os/sitemap.xml
+Sitemap: https://gymos.in/sitemap.xml
