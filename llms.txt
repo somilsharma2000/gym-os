@@ -1,0 +1,19 @@
+# GYM OS — by Beyond Pixells
+
+> Gym management software built for Indian gyms. Leads, trial passes, QR door check-ins, GST billing, UPI payments and WhatsApp renewal nudges — one system, flat pricing in rupees, no per-staff fees.
+
+## What it is
+GYM OS is a gym operating system for Indian fitness businesses (single gyms and small chains). It replaces paper registers and foreign USD-priced software with a UPI-first, GST-ready system the front desk can actually use.
+
+## Key pages
+- [Home](https://gym-os-app.vercel.app/): what it does, live demo of the owner dashboard
+- [Pricing](https://gym-os-app.vercel.app/pricing): flat INR plans — setup fee + fixed monthly, unlimited members
+- [Compare](https://gym-os-app.vercel.app/compare): GYM OS vs Mindbody vs Gymdesk
+- [Console demo](https://gym-os-app.vercel.app/dashboard/#/dashboard): read-only sandbox with seeded data, no signup
+- [Blog](https://gym-os-app.vercel.app/blog): guides for Indian gym owners
+
+## Facts
+- Built in India by Beyond Pixells (beyondpixells@gmail.com)
+- WhatsApp contact: +91 77370 77479
+- Core features: Lead CRM, single-use QR trial passes, 3-second QR check-ins, CGST/SGST invoicing with double-entry ledger, UPI payments with UTR references, automated WhatsApp renewal reminders with 24-hour suppression
+- Legal: [Privacy](https://gym-os-app.vercel.app/privacy), [Terms](https://gym-os-app.vercel.app/terms), [Refunds](https://gym-os-app.vercel.app/refund) — DPDP Act compliant consent on all lead forms
